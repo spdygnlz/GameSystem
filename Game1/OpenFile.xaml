@@ -1,0 +1,89 @@
+﻿<Window x:Class="Game1.OpenFile"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Game1"
+        mc:Ignorable="d"
+        Title="Open Project File" Height="270" Width="400" ResizeMode="NoResize">
+    <Grid Name="ContentGrid">
+        <StackPanel>
+            <TextBlock x:Name="OpenFileLabelTitle" 
+                       Text="Open Project File" 
+                       HorizontalAlignment="Center" 
+                       Margin="10" 
+                       VerticalAlignment="Top" 
+                       Height="27" 
+                       TextWrapping="Wrap" 
+                       FontFamily="Arial Rounded MT Bold" FontSize="20" TextAlignment="Center"/>
+            
+            <TextBlock x:Name="label" 
+                       Text="Welcome to Jeopardy!  Please select the Jeopardy project file to use for this game (.jeo)." 
+                       HorizontalAlignment="Center" 
+                       Margin="10" 
+                       VerticalAlignment="Top" 
+                       Height="44" 
+                       TextWrapping="Wrap" 
+                       FontFamily="Arial Rounded MT Bold"/>
+            
+            <Label x:Name="jeopardyFileLabel"       
+                   Content="Jeopardy File"         
+                   HorizontalAlignment="Left" 
+                   Margin="10,0,0,0"
+                   VerticalAlignment="Top" />
+
+            <Grid Width="{Binding ElementName=ContentGrid, Path=Width}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="95" />
+                </Grid.ColumnDefinitions>
+
+                <TextBox x:Name="jeopardyFileTextBox" 
+                         Grid.Column="0"
+                         HorizontalAlignment="Stretch" 
+                         Height="23" Margin="10"  
+                         TextWrapping="NoWrap" 
+                         Text="Select a file..." 
+                         VerticalAlignment="Top" 
+                         MinWidth="100" 
+                         MaxWidth="300"
+                         IsEnabled="False"
+                         />
+                <Button x:Name="jeoFileBrowseButton"        
+                        Grid.Column="1"
+                        Content="Browse" 
+                        HorizontalAlignment="Right" 
+                        Margin="10"
+                        VerticalAlignment="Top" 
+                        Width="75" 
+                        Height="{Binding ElementName=jeopardyFileTextBox, Path=Height}" 
+                        Click="OpenFile1"/>
+            </Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Button x:Name="editButton" 
+                        Content="Edit" 
+                        HorizontalAlignment="Left" 
+                        Margin="10" 
+                        VerticalAlignment="Top" 
+                        IsEnabled="False"
+                        Grid.Column="0"
+                        Width="75" Click="Edit"/>
+                <Button x:Name="openButton" 
+                        Content="Open" 
+                        HorizontalAlignment="Right" 
+                        Margin="10" 
+                        VerticalAlignment="Top" 
+                        IsEnabled="False"
+                        Grid.Column="1"
+                        Width="75" Click="Open"/>
+            </Grid>
+        </StackPanel>
+
+
+
+    </Grid>
+</Window>

@@ -1,0 +1,14 @@
+﻿<Window x:Class="GameSystem.Shell"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:interfaces="clr-namespace:GameInterfaces;assembly=GameInterfaces"
+        xmlns:local="clr-namespace:GameSystem"
+        mc:Ignorable="d"
+        xmlns:prism="http://prismlibrary.com/"
+        Title="MainWindow">
+    <Grid>
+        <ContentControl prism:RegionManager.RegionName="{x:Static interfaces:RegionNames.BaseShell}" />
+    </Grid>
+</Window>

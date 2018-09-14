@@ -1,0 +1,37 @@
+﻿<UserControl x:Class="David.GameSystem.Modules.JeopardyModuleView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:David.GameSystem.Modules"
+             mc:Ignorable="d" >
+
+    <UserControl.Resources>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}" BorderThickness="0">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="Red"/>
+                    <!-- this doesn't work, but it keeps the background what we want -->
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
+
+    <Button Width="200" Height="200" Command="{Binding StartGame}">
+        <Viewbox VerticalAlignment="Bottom">
+            <StackPanel Orientation="Vertical">
+                <MediaElement LoadedBehavior="Play" Source="HDkDMS.gif" />
+            </StackPanel>
+        </Viewbox>
+    </Button>
+    
+</UserControl>

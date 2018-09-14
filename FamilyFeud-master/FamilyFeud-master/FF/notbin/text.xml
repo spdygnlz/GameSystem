@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+	<Answers>
+		<Answer1>
+			<Name>CANDY</Name>
+			<Value>20</Value>
+		</Answer1>
+
+		<Answer2>
+			<Name>POTATOES</Name>
+			<Value>19</Value>
+		</Answer2>
+
+		<Answer3>
+			<Name>ICE CREAM</Name>
+			<Value>16</Value>
+		</Answer3>
+
+		<Answer4>
+			<Name>BEEF</Name>
+			<Value>11</Value>
+		</Answer4>
+
+		<Answer5>
+			<Name>PIZZA</Name>
+			<Value>5</Value>
+		</Answer5>
+
+		<Answer6>
+			<Name>BREAD</Name>
+			<Value>4</Value>
+		</Answer6>
+
+		<Answer7>
+			<Name>PASTA</Name>
+			<Value>4</Value>
+		</Answer7>
+
+		<Answer8>
+			<Name>PIE</Name>
+			<Value>4</Value>
+		</Answer8>
+
+		<Answer9>
+			<Name>SUGAR</Name>
+			<Value>4</Value>
+		</Answer9>
+	</Answers>
+

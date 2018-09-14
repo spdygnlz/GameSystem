@@ -1,0 +1,68 @@
+﻿<UserControl x:Class="David.GameSystem.Modules.PlayerScoresView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:theme="http://schemas.microsoft.com/wpf/2008/toolkit"
+             xmlns:local="clr-namespace:David.GameSystem.Modules"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <local:PrefixValueConverter x:Key="PrefixConverter" />
+
+        <Style x:Key="InitialStyle" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Arial Narrow" />
+            <Setter Property="FontSize" Value="30" />
+            <Setter Property="Foreground" Value="White" />
+        </Style>
+
+        <Style x:Key="DetailsStyle" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Arial Narrow" />
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="Foreground" Value="White" />
+        </Style>
+        
+        <Style x:Key="ScoreStyle" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Arial Narrow" />
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="Foreground" Value="White" />
+        </Style>
+
+        <DataTemplate x:Key="PlayerTemplate">
+            <Border CornerRadius="15" Padding="10" Width="200">
+                <Border.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <LinearGradientBrush.RelativeTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="15"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </LinearGradientBrush.RelativeTransform>
+                        <GradientStop Color="#9A0017FF" Offset="0.916"/>
+                        <GradientStop Color="#FFA3AAEE" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+
+                <StackPanel Orientation="Horizontal">
+                    <Border CornerRadius="50" Width="60" Height="60" Margin="0" BorderBrush="Black" BorderThickness="1" Background="#FF7E7E7E" >
+                        <TextBlock Style="{StaticResource InitialStyle}" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Initials}" />
+                    </Border>
+                    <StackPanel Margin="15,0,0,0" Orientation="Vertical">
+                        <TextBlock Text="{Binding FirstName}" Style="{StaticResource DetailsStyle}" />
+                        <TextBlock Text="{Binding LastName}" Style="{StaticResource DetailsStyle}" />
+                        <TextBlock Text=" " />
+                        <TextBlock Text="{Binding Score}" Style="{StaticResource ScoreStyle}"/>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+        </DataTemplate>
+    </UserControl.Resources>
+
+    <Grid>
+        <ListView ItemsSource="{Binding Players}" ItemTemplate="{StaticResource PlayerTemplate}" />
+
+        <TextBlock Text="Players" />
+    </Grid>
+</UserControl>
