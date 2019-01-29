@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 namespace GameInterfaces
 {
     [Export]
+    [PartCreationPolicy(CreationPolicy.NonShared)]
     public class PlayerModel
     {
         public string FirstName { get; set; }

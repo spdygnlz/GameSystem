@@ -92,7 +92,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="JeopardyMain.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PlayEditSelectionPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\AddPlayersPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -110,10 +122,19 @@
     <Compile Include="JeopardyCard.xaml.cs">
       <DependentUpon>JeopardyCard.xaml</DependentUpon>
     </Compile>
+    <Compile Include="JeopardyMain.xaml.cs">
+      <DependentUpon>JeopardyMain.xaml</DependentUpon>
+    </Compile>
     <Compile Include="JeopardyModel.cs" />
     <Compile Include="JeopardyViewModel.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PlayEditSelectionPage.xaml.cs">
+      <DependentUpon>PlayEditSelectionPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AddPlayersPage.xaml.cs">
+      <DependentUpon>AddPlayersPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="PlayWindow.xaml.cs">
       <DependentUpon>PlayWindow.xaml</DependentUpon>

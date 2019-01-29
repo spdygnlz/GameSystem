@@ -60,9 +60,19 @@
         </DataTemplate>
     </UserControl.Resources>
 
-    <Grid>
-        <ListView ItemsSource="{Binding Players}" ItemTemplate="{StaticResource PlayerTemplate}" />
+    <DockPanel>
 
-        <TextBlock Text="Players" />
-    </Grid>
+        <TextBlock DockPanel.Dock="Top" Text="Players" />
+        <ListView DockPanel.Dock="Top" ItemsSource="{Binding Players}" ItemTemplate="{StaticResource PlayerTemplate}" />
+        <Grid DockPanel.Dock="Bottom">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column="0" Content="AddPlayer" />
+            <Button Grid.Column="1" Content="RemovePlayer" />
+        </Grid>
+        <!--<TextBlock Text="Players" />-->
+    </DockPanel>
 </UserControl>

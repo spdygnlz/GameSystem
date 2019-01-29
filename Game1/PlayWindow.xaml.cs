@@ -24,7 +24,7 @@ namespace Game1
     [Export(typeof(IGame))]
     public partial class PlayWindow : UserControl, IGame
     {
-        private const string Filename = @"C:\Users\David\Documents\jeopardy.jeo";
+        //private const string Filename = @"C:\Users\David\Documents\jeopardy.jeo";
         
         //private string Filename { get; set; }
 
@@ -40,11 +40,11 @@ namespace Game1
 
         public PlayWindow()
         {
-                //OpenFile fileDialog = new OpenFile();
-                //fileDialog.ShowDialog();
+                OpenFile fileDialog = new OpenFile();
+                fileDialog.ShowDialog();
 
-                //Filename = fileDialog.Filename;
-                var viewModel = new JeopardyViewModel(Filename);
+                var filename = fileDialog.Filename;
+                var viewModel = new JeopardyViewModel(filename);
                 DataContext = viewModel;
 
                 InitializeComponent();
@@ -87,7 +87,7 @@ namespace Game1
 
                     Grid.SetColumn(card, column);
                     Grid.SetRow(card, row + 1);
-                    MainGrid.Children.Add(card);                    
+                    MainGrid.Children.Add(card);
                 }
             }            
         }
