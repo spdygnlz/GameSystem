@@ -17,14 +17,20 @@
         
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition />
-                <RowDefinition />
+                <RowDefinition Height=".3*" />
+                <RowDefinition Height=".3*" />
+                <RowDefinition Height=".6*"/>
             </Grid.RowDefinitions>
-            <Label Grid.Row="0" Content="Jeopardy!" Margin="100, 50, 0, 0" FontFamily="Ariel" FontSize="65" VerticalAlignment="Top"/>
-            <StackPanel Grid.Row="1" Orientation="Horizontal">
-                <ListBox Margin="100,0,0,0" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="175" Width="550">
-                    
-                </ListBox>
+            <Label Grid.Row="0" Content="Jeopardy!" Margin="100, 0, 0, 0" FontFamily="Ariel" FontSize="65" VerticalAlignment="Center"/>
+            <StackPanel Orientation="Vertical" Grid.Row="1">
+                <Label Margin="100, 0, 0, 0" FontFamily="Ariel" FontSize="24" >Select a file</Label>
+                <StackPanel Margin="100, 0, 0, 0" Orientation="Horizontal"  >
+                    <TextBox Name="FileName" Text="{Binding FileName}" Width="350" Margin="0, 0, 25, 20" />
+                    <Button Name="Browse" Content="Browse" Command="{Binding BrowseCommand}" Margin="0, 0, 0, 20" Height="35" Width="75" />
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Grid.Row="2" Orientation="Horizontal">
+                <ListBox Margin="100,0,0,0" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="175" Width="550" />
                 <Button Margin="25" Grid.Column="1" Width="75" Height="35">+ Add Player</Button>
             </StackPanel>
             
