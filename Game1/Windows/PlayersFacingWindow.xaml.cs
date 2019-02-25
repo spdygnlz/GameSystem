@@ -10,26 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Game1.Pages
+namespace Game1.Windows
 {
     /// <summary>
-    /// Interaction logic for PlayEditSelectionPage.xaml
+    /// Interaction logic for PlayersFacingWindow.xaml
     /// </summary>
-    public partial class PlayEditSelectionPage : Page
+    public partial class PlayersFacingWindow : Window
     {
-        public PlayEditSelectionPage()
+        public PlayersFacingWindow()
         {
             InitializeComponent();
-        }
-
-        private void PlayButtonClick(object sender, RoutedEventArgs e)
-        {
-            NavigationService ns = this.NavigationService;
-            AddPlayersPage page = new AddPlayersPage();
-            ns.Navigate(page);
         }
     }
 }

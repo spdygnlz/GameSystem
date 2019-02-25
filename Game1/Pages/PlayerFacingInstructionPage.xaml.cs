@@ -16,20 +16,13 @@ using System.Windows.Shapes;
 namespace Game1.Pages
 {
     /// <summary>
-    /// Interaction logic for PlayEditSelectionPage.xaml
+    /// Interaction logic for PlayerFacingInstructionPage.xaml
     /// </summary>
-    public partial class PlayEditSelectionPage : Page
+    public partial class PlayerFacingInstructionPage : Page
     {
-        public PlayEditSelectionPage()
+        public PlayerFacingInstructionPage()
         {
             InitializeComponent();
-        }
-
-        private void PlayButtonClick(object sender, RoutedEventArgs e)
-        {
-            NavigationService ns = this.NavigationService;
-            AddPlayersPage page = new AddPlayersPage();
-            ns.Navigate(page);
         }
     }
 }

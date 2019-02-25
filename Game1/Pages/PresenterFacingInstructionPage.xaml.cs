@@ -16,20 +16,18 @@ using System.Windows.Shapes;
 namespace Game1.Pages
 {
     /// <summary>
-    /// Interaction logic for PlayEditSelectionPage.xaml
+    /// Interaction logic for PresenterFacingInstructionPage.xaml
     /// </summary>
-    public partial class PlayEditSelectionPage : Page
+    public partial class PresenterFacingInstructionPage : Page
     {
-        public PlayEditSelectionPage()
+        public PresenterFacingInstructionPage()
         {
             InitializeComponent();
         }
 
-        private void PlayButtonClick(object sender, RoutedEventArgs e)
+        private void StartGameButton_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService ns = this.NavigationService;
-            AddPlayersPage page = new AddPlayersPage();
-            ns.Navigate(page);
+            // TODO: Load the content in both windows
         }
     }
 }

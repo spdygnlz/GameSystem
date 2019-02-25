@@ -16,13 +16,13 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Game1
+namespace Game1.UserControls
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     [Export(typeof(IGame))]
-    public partial class PlayWindow : UserControl, IGame
+    public partial class PlayMainControl : UserControl, IGame
     {
         //private const string Filename = @"C:\Users\David\Documents\jeopardy.jeo";
         
@@ -38,7 +38,7 @@ namespace Game1
 
         private IKeyboardCapture kb = new LockoutKeyboardCapture(Key.Space);
 
-        public PlayWindow()
+        public PlayMainControl()
         {
                 OpenFile fileDialog = new OpenFile();
                 fileDialog.ShowDialog();

@@ -84,19 +84,45 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="ClueWindow.xaml">
+    <Compile Include="Models\JeopardyCategory.cs" />
+    <Compile Include="Models\JeopardyModelHelper.cs" />
+    <Compile Include="Models\JeopardyQuestion.cs" />
+    <Compile Include="Pages\PlayerFacingInstructionPage.xaml.cs">
+      <DependentUpon>PlayerFacingInstructionPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PresenterFacingInstructionPage.xaml.cs">
+      <DependentUpon>PresenterFacingInstructionPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\IntroductionWindow.xaml.cs">
+      <DependentUpon>IntroductionWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\PlayersFacingWindow.xaml.cs">
+      <DependentUpon>PlayersFacingWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\PresenterFacingWindow.xaml.cs">
+      <DependentUpon>PresenterFacingWindow.xaml</DependentUpon>
+    </Compile>
+    <Page Include="UserControls\ClueWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="JeopardyCard.xaml">
+    <Page Include="UserControls\PlayMainControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="JeopardyMain.xaml">
+    <Page Include="UserControls\JeopardyCard.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainWindow.xaml">
+    <Page Include="Windows\IntroductionWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\JeopardyMain.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\MainWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -108,26 +134,33 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="PlayWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
+    <Page Include="Pages\PlayerFacingInstructionPage.xaml">
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PresenterFacingInstructionPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ClueWindow.xaml.cs">
+    <Compile Include="UserControls\PlayMainControl.xaml.cs">
+      <DependentUpon>PlayMainControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ClueWindow.xaml.cs">
       <DependentUpon>ClueWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="JeopardyCard.xaml.cs">
+    <Compile Include="UserControls\JeopardyCard.xaml.cs">
       <DependentUpon>JeopardyCard.xaml</DependentUpon>
     </Compile>
-    <Compile Include="JeopardyMain.xaml.cs">
+    <Compile Include="Windows\JeopardyMain.xaml.cs">
       <DependentUpon>JeopardyMain.xaml</DependentUpon>
     </Compile>
-    <Compile Include="JeopardyModel.cs" />
+    <Compile Include="Models\JeopardyModel.cs" />
     <Compile Include="JeopardyViewModel.cs" />
-    <Compile Include="MainWindow.xaml.cs">
+    <Compile Include="Windows\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\PlayEditSelectionPage.xaml.cs">
@@ -136,18 +169,22 @@
     <Compile Include="Pages\AddPlayersPage.xaml.cs">
       <DependentUpon>AddPlayersPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PlayWindow.xaml.cs">
-      <DependentUpon>PlayWindow.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <Page Include="OpenFile.xaml">
+    <Page Include="Windows\OpenFile.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\PlayersFacingWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\PresenterFacingWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GridControl.cs" />
-    <Compile Include="OpenFile.xaml.cs">
+    <Compile Include="Windows\OpenFile.xaml.cs">
       <DependentUpon>OpenFile.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">

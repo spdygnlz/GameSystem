@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Game1.Windows;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,16 +14,30 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Game1
+namespace Game1.Pages
 {
     /// <summary>
     /// Interaction logic for PlayPage.xaml
     /// </summary>
-    public partial class PlayPage : Page
+    public partial class AddPlayersPage : Page
     {
-        public PlayPage()
+        public AddPlayersPage()
         {
             InitializeComponent();
+        }
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.GoBack();
+        }
+
+        private void NextButton_Click(object sender, RoutedEventArgs e)
+        {
+            PlayersFacingWindow playersWindow = new PlayersFacingWindow();
+            playersWindow.Show();
+
+            PresenterFacingWindow presenterWindow = new PresenterFacingWindow();
+            presenterWindow.Show();
         }
     }
 }

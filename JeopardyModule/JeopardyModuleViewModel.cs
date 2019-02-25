@@ -7,6 +7,7 @@ using GameInterfaces;
 using GameInterfaces.Events;
 using Game1;
 using Microsoft.Practices.ServiceLocation;
+using Game1.Windows;
 
 namespace David.GameSystem.Modules
 {
@@ -61,13 +62,15 @@ namespace David.GameSystem.Modules
             mainRegion.Activate(board); // Needed?
 
             // Get the game module             
-            PlayWindow gameView = new PlayWindow();
+            //PlayMainControl gameView = new PlayMainControl();
             //JeopardyGameView gameView = new JeopardyGameView();
-
+            IntroductionWindow gameView2 = new IntroductionWindow();
+            gameView2.Show();
+            
             // Load the Game in the board 
-            var boardRegion = _regionManager.Regions[RegionNames.GameWindow];
-            boardRegion.Add(gameView);
-            boardRegion.Activate(gameView); // Needed?            
+            //var boardRegion = _regionManager.Regions[RegionNames.GameWindow];
+            //boardRegion.Add(gameView);
+            //boardRegion.Activate(gameView); // Needed?            
 
             // Get the players module
             var player = ServiceLocator.Current.GetInstance<PlayerScoresView>();
