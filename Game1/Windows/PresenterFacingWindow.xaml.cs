@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.ComponentModel.Composition;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,11 +19,14 @@ namespace Game1.Windows
     /// <summary>
     /// Interaction logic for PresenterFacingWindow.xaml
     /// </summary>
+    [Export]
     public partial class PresenterFacingWindow : Window
     {
+        [ImportingConstructor]
         public PresenterFacingWindow()
         {
             InitializeComponent();
         }
+
     }
 }

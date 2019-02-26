@@ -26,7 +26,7 @@
                 <Label Margin="100, 0, 0, 0" FontFamily="Ariel" FontSize="24" >Select a file</Label>
                 <StackPanel Margin="100, 0, 0, 0" Orientation="Horizontal"  >
                     <TextBox Name="FileName" Text="{Binding FileName}" Width="350" Margin="0, 0, 25, 20" />
-                    <Button Name="Browse" Content="Browse" Command="{Binding BrowseCommand}" Margin="0, 0, 0, 20" Height="35" Width="75" />
+                    <Button Name="Browse" Content="Browse" Command="{Binding BrowseCommand}" Margin="0, 0, 0, 20" Height="35" Width="75" Click="Browse_Click" />
                 </StackPanel>
             </StackPanel>
             <StackPanel Grid.Row="2" Orientation="Horizontal">

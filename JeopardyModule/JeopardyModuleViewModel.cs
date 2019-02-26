@@ -8,6 +8,7 @@ using GameInterfaces.Events;
 using Game1;
 using Microsoft.Practices.ServiceLocation;
 using Game1.Windows;
+using System.Windows;
 
 namespace David.GameSystem.Modules
 {
@@ -64,20 +65,23 @@ namespace David.GameSystem.Modules
             // Get the game module             
             //PlayMainControl gameView = new PlayMainControl();
             //JeopardyGameView gameView = new JeopardyGameView();
-            IntroductionWindow gameView2 = new IntroductionWindow();
+
+            var gameView2 = ServiceLocator.Current.GetInstance<IntroductionWindow>();
+            //IntroductionWindow gameView2 = new IntroductionWindow();
             gameView2.Show();
-            
+
+            Application.Current.MainWindow.Close();
+
             // Load the Game in the board 
             //var boardRegion = _regionManager.Regions[RegionNames.GameWindow];
             //boardRegion.Add(gameView);
             //boardRegion.Activate(gameView); // Needed?            
 
-            // Get the players module
-            var player = ServiceLocator.Current.GetInstance<PlayerScoresView>();
-            var playerRegion = _regionManager.Regions[RegionNames.PlayersContent];
-            playerRegion.Add(player);
-            playerRegion.Activate(player);
-
+            //// Get the players module
+            //var player = ServiceLocator.Current.GetInstance<PlayerScoresView>();
+            //var playerRegion = _regionManager.Regions[RegionNames.PlayersContent];
+            //playerRegion.Add(player);
+            //playerRegion.Activate(player);
 
             // TODO: Create a view with the regions applicable to the Family Feud game           
             // TODO: Add our view with regions

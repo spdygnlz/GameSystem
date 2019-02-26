@@ -1,4 +1,6 @@
 ﻿using Game1.Windows;
+using Microsoft.Practices.ServiceLocation;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,10 +22,11 @@ namespace Game1.Pages
     /// Interaction logic for PlayPage.xaml
     /// </summary>
     public partial class AddPlayersPage : Page
-    {
+    {        
         public AddPlayersPage()
         {
             InitializeComponent();
+            NextButton.IsEnabled = false;
         }
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
@@ -33,11 +36,37 @@ namespace Game1.Pages
 
         private void NextButton_Click(object sender, RoutedEventArgs e)
         {
-            PlayersFacingWindow playersWindow = new PlayersFacingWindow();
+            JeopardyViewModel viewModel = new JeopardyViewModel(FileName.Text);            
+            
+            var playersWindow = ServiceLocator.Current.GetInstance<PlayersFacingWindow>();
+            playersWindow.DataContext = viewModel;
             playersWindow.Show();
 
-            PresenterFacingWindow presenterWindow = new PresenterFacingWindow();
+            var presenterWindow = ServiceLocator.Current.GetInstance<PresenterFacingWindow>();
+            presenterWindow.DataContext = viewModel;
             presenterWindow.Show();
+
+            foreach (Window window in Application.Current.Windows.OfType<IntroductionWindow>())
+                ((IntroductionWindow)window).Close();
+        }
+
+        private void Browse_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFile = new OpenFileDialog();
+            openFile.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            openFile.Filter = "Jeopardy files (*.jeo)|*.jeo|All files (*.*)|*.*";
+            if (openFile.ShowDialog() == true)
+            {
+                FileName.Text = openFile.FileName;
+                if (string.IsNullOrWhiteSpace(FileName.Text))
+                {
+                    NextButton.IsEnabled = false;
+                }
+                else
+                {
+                    NextButton.IsEnabled = true;
+                }
+            }
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.Composition;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,8 +18,10 @@ namespace Game1.Windows
     /// <summary>
     /// Interaction logic for PlayersFacingWindow.xaml
     /// </summary>
+    [Export]
     public partial class PlayersFacingWindow : Window
     {
+        [ImportingConstructor]
         public PlayersFacingWindow()
         {
             InitializeComponent();

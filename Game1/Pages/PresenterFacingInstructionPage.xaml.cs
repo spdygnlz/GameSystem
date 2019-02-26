@@ -28,6 +28,7 @@ namespace Game1.Pages
         private void StartGameButton_Click(object sender, RoutedEventArgs e)
         {
             // TODO: Load the content in both windows
+            // TODO: how to get the shared content from anywhere?
         }
     }
 }
