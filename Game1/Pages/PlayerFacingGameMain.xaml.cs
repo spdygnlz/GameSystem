@@ -1,8 +1,5 @@
-﻿using Microsoft.Practices.ServiceLocation;
-using Prism.Events;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.Composition;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,20 +10,20 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Game1.Windows
+namespace Game1.Pages
 {
     /// <summary>
-    /// Interaction logic for IntroductionWindow.xaml
+    /// Interaction logic for PlayerFacingGameMain.xaml
     /// </summary>
-    [Export]
-    public partial class IntroductionWindow : Window
+    public partial class PlayerFacingGameMain : Page
     {
-        [ImportingConstructor]
-        public IntroductionWindow()
+        public PlayerFacingGameMain(object dataContext)
         {
-            InitializeComponent();                        
+            DataContext = dataContext;
+            InitializeComponent();
         }
     }
 }

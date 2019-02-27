@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Prism.Events;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.Composition;
 using System.Data;
 using System.Linq;
 using System.Text;
@@ -7,26 +9,44 @@ using System.Threading.Tasks;
 
 namespace Game1
 {
+    [Export, PartCreationPolicy(CreationPolicy.Shared) ]
     public class JeopardyViewModel
     {
         public DataTable table = new DataTable();
-        private JeopardyModel model;        
+        private JeopardyModel model;
+        private GameState State;
+        private readonly IEventAggregator eventAggregator;
 
-        public JeopardyViewModel()
-        {
-            
+        public string FileName
+        {            
+            set
+            {
+                model = JeopardyModelHelper.OpenModel(value);
+            }
         }
 
-        public JeopardyViewModel(string filename)
+        [ImportingConstructor]
+        public JeopardyViewModel(IEventAggregator eventAggregator)
         {
-            model = JeopardyModelHelper.OpenModel(filename);
+            State = GameState.Jeopardy;
+            this.eventAggregator = eventAggregator;
+            eventAggregator.GetEvent<PubSubEvent<GameState>>().Subscribe(s => State = s);
         }
 
         public List<JeopardyCategory> Categories
         {
             get
             {
-                return model.Categories;
+                switch(State)
+                {
+                    case GameState.Jeopardy:
+                        return model.Categories;
+                    case GameState.DoubleJeopardy:
+                        return model.DoubleJeopardyCategories;
+                    case GameState.FinalJeopardy:
+                        return new List<JeopardyCategory>() { model.FinalJeopardy };
+                }
+                return new List<JeopardyCategory>();
             }
         }
 
@@ -34,5 +54,12 @@ namespace Game1
         {            
             JeopardyModelHelper.WriteModel(filename, model);
         }
+    }
+
+    enum GameState
+    {
+        Jeopardy,
+        DoubleJeopardy,
+        FinalJeopardy
     }
 }

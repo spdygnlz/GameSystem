@@ -87,8 +87,15 @@
     <Compile Include="Models\JeopardyCategory.cs" />
     <Compile Include="Models\JeopardyModelHelper.cs" />
     <Compile Include="Models\JeopardyQuestion.cs" />
+    <Compile Include="Events\LoadJeopardyContentEvent.cs" />
+    <Compile Include="Pages\PlayerFacingGameMain.xaml.cs">
+      <DependentUpon>PlayerFacingGameMain.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\PlayerFacingInstructionPage.xaml.cs">
       <DependentUpon>PlayerFacingInstructionPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PresenterFacingGameMain.xaml.cs">
+      <DependentUpon>PresenterFacingGameMain.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\PresenterFacingInstructionPage.xaml.cs">
       <DependentUpon>PresenterFacingInstructionPage.xaml</DependentUpon>
@@ -102,6 +109,14 @@
     <Compile Include="Windows\PresenterFacingWindow.xaml.cs">
       <DependentUpon>PresenterFacingWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="Pages\PlayerFacingGameMain.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PresenterFacingGameMain.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserControls\ClueWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

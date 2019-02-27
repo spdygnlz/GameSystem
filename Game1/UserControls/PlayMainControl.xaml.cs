@@ -24,10 +24,6 @@ namespace Game1.UserControls
     [Export(typeof(IGame))]
     public partial class PlayMainControl : UserControl, IGame
     {
-        //private const string Filename = @"C:\Users\David\Documents\jeopardy.jeo";
-        
-        //private string Filename { get; set; }
-
         public string GameName
         {
             get
@@ -39,86 +35,57 @@ namespace Game1.UserControls
         private IKeyboardCapture kb = new LockoutKeyboardCapture(Key.Space);
 
         public PlayMainControl()
-        {
-                OpenFile fileDialog = new OpenFile();
-                fileDialog.ShowDialog();
+        {           
+            InitializeComponent();
 
-                var filename = fileDialog.Filename;
-                var viewModel = new JeopardyViewModel(filename);
-                DataContext = viewModel;
-
-                InitializeComponent();
-                InitGrid();
-            
-
-                kb.RegisterWindow(this);
-                kb.KeyboardNotification += (sender, args) => { MessageBox.Show($"Got {args.Key} at {args.Time.ToString(@"ss\:fff")}"); };
-        }
-
-        private void InitGrid()
-        {
-            for (int column = 0; column < 6; column++)
+            kb.RegisterWindow(this);
+            kb.KeyboardNotification += (sender, args) => 
             {
-                // Create the header row
-                var label = new Label();              
-                label.SetBinding(ContentProperty, new Binding($"Categories[{column}].Name"));
-                label.HorizontalAlignment = HorizontalAlignment.Center;
-                label.VerticalAlignment = VerticalAlignment.Center;
-                
-                label.Template = TryFindResource("LabelTemplate") as ControlTemplate;
-
-                Grid.SetColumn(label, column);
-                Grid.SetRow(label, 0);
-                MainGrid.Children.Add(label);
-
-                // Get the buttons for each of the 5 questions
-                for (int row = 0; row < 5; row++)
-                {
-                    var card = new JeopardyCard();
-                    var valueBinding = new Binding($"Categories[{column}][{row}].Value");
-                    var valueBindingBase = card.SetBinding(JeopardyCard.ClueValueProperty, valueBinding);
-                    var questionBinding = new Binding($"Categories[{column}][{row}].Question");
-                    var questionBindingBase = card.SetBinding(JeopardyCard.ClueTextProperty, questionBinding);
-
-                    card.Margin = new Thickness(4);
-//                    button.Style = FindResource("CardStyle") as Style;
-
-                    card.MouseDoubleClick += JeopardyCardDoubleClick;
-
-                    Grid.SetColumn(card, column);
-                    Grid.SetRow(card, row + 1);
-                    MainGrid.Children.Add(card);
-                }
-            }            
+                MessageBox.Show($"Got {args.Key} at {args.Time.ToString(@"ss\:fff")}");
+            };
         }
 
         private void JeopardyCardDoubleClick(object sender, MouseButtonEventArgs e)
         {
+            // Get the card that was clicked
             var card = e.Source as JeopardyCard;
 
+            // Create the new window to show over the grid
             ClueWindow window = new ClueWindow();
-            window.MouseDoubleClick += (s, args) => {
+
+            // Hook up the event that will close the window when it's double clicked
+            window.MouseDoubleClick += (s, args) =>             
+            {
+                // Turn the mouse cursor back on
                 Mouse.OverrideCursor = Cursors.Arrow;
+
+                // Remove the overlay window
                 GameCanvas.Children.Remove((UIElement)s);
             };
 
-
-            Point point = card.TransformToAncestor(Application.Current.MainWindow).Transform(new Point(0, 0));
-
-
-            //window.Width = SystemParameters.WorkArea.Width;
-            //window.Height = SystemParameters.WorkArea.Height;
-
+            // Set the width of the overlay window to the actual window
             window.Width = ActualWidth;
             window.Height = ActualHeight;
 
-            window.SetValue(Canvas.LeftProperty, point.X + (card.ActualWidth/ 2));
-            window.SetValue(Canvas.TopProperty, point.Y + (card.ActualHeight/ 2));
+            // Place the overlay window directly over the actual window
+            Window parentWindow = Window.GetWindow(this);
+            Point point = card.TransformToAncestor(parentWindow).Transform(new Point(0, 0));
+            window.SetValue(Canvas.LeftProperty, point.X + (card.ActualWidth / 2));
+            window.SetValue(Canvas.TopProperty, point.Y + (card.ActualHeight / 2));
+
+            // Set the text on the overlay window
             window.ClueText = card.ClueText;
+
+            // Remove the mouse cursor 
             Mouse.OverrideCursor = Cursors.None;
+
+            // Reset the lockout/timer on the keyboard capture module
             kb.Reset();
 
+            // Add the overlay window to the main window
             GameCanvas.Children.Add(window);
+
+            // Remove the original card so it can't be clicked on again
             MainGrid.Children.Remove(card);
         }
 

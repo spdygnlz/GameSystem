@@ -84,6 +84,61 @@
                 <local:GridControlRowDefinition />
                 <local:GridControlRowDefinition />
             </Grid.RowDefinitions>
+            
+            <!--#region Headers -->            
+            <Label Grid.Column="0" Grid.Row="0" Content="{Binding Categories[0].Name}" HorizontalAlignment="Center" VerticalAlignment="Center" Template="{StaticResource LabelTemplate}" />
+            <Label Grid.Column="1" Grid.Row="0" Content="{Binding Categories[1].Name}" HorizontalAlignment="Center" VerticalAlignment="Center" Template="{StaticResource LabelTemplate}" />
+            <Label Grid.Column="2" Grid.Row="0" Content="{Binding Categories[2].Name}" HorizontalAlignment="Center" VerticalAlignment="Center" Template="{StaticResource LabelTemplate}" />
+            <Label Grid.Column="3" Grid.Row="0" Content="{Binding Categories[3].Name}" HorizontalAlignment="Center" VerticalAlignment="Center" Template="{StaticResource LabelTemplate}" />
+            <Label Grid.Column="4" Grid.Row="0" Content="{Binding Categories[4].Name}" HorizontalAlignment="Center" VerticalAlignment="Center" Template="{StaticResource LabelTemplate}" />
+            <Label Grid.Column="5" Grid.Row="0" Content="{Binding Categories[5].Name}" HorizontalAlignment="Center" VerticalAlignment="Center" Template="{StaticResource LabelTemplate}" />
+            <!--#endregion  -->
+            
+            <!--#region Row 1 -->
+            <local:JeopardyCard Grid.Column="0" Grid.Row="1" ClueValue="{Binding Categories[0][0].Value}" ClueText="{Binding Categories[0][0].Question}" Margin="4" MouseDoubleClick="JeopardyCardDoubleClick" />
+            <local:JeopardyCard Grid.Column="1" Grid.Row="1" ClueValue="{Binding Categories[1][0].Value}" ClueText="{Binding Categories[0][0].Question}" Margin="4" MouseDoubleClick="JeopardyCardDoubleClick" />
+            <local:JeopardyCard Grid.Column="2" Grid.Row="1" ClueValue="{Binding Categories[2][0].Value}" ClueText="{Binding Categories[0][0].Question}" Margin="4" MouseDoubleClick="JeopardyCardDoubleClick" />
+            <local:JeopardyCard Grid.Column="3" Grid.Row="1" ClueValue="{Binding Categories[3][0].Value}" ClueText="{Binding Categories[0][0].Question}" Margin="4" MouseDoubleClick="JeopardyCardDoubleClick" />
+            <local:JeopardyCard Grid.Column="4" Grid.Row="1" ClueValue="{Binding Categories[4][0].Value}" ClueText="{Binding Categories[0][0].Question}" Margin="4" MouseDoubleClick="JeopardyCardDoubleClick" />
+            <local:JeopardyCard Grid.Column="5" Grid.Row="1" ClueValue="{Binding Categories[5][0].Value}" ClueText="{Binding Categories[0][0].Question}" Margin="4" MouseDoubleClick="JeopardyCardDoubleClick" />
+            <!--#endregion -->
+
+            <!--#region Row 2 -->
+            <local:JeopardyCard Grid.Column="0" Grid.Row="2" ClueValue="{Binding Categories[0][1].Value}" ClueText="{Binding Categories[0][1].Question}" Margin="4" MouseDoubleClick="JeopardyCardDoubleClick" />
+            <local:JeopardyCard Grid.Column="1" Grid.Row="2" ClueValue="{Binding Categories[1][1].Value}" ClueText="{Binding Categories[1][1].Question}" Margin="4" MouseDoubleClick="JeopardyCardDoubleClick" />
+            <local:JeopardyCard Grid.Column="2" Grid.Row="2" ClueValue="{Binding Categories[2][1].Value}" ClueText="{Binding Categories[2][1].Question}" Margin="4" MouseDoubleClick="JeopardyCardDoubleClick" />
+            <local:JeopardyCard Grid.Column="3" Grid.Row="2" ClueValue="{Binding Categories[3][1].Value}" ClueText="{Binding Categories[3][1].Question}" Margin="4" MouseDoubleClick="JeopardyCardDoubleClick" />
+            <local:JeopardyCard Grid.Column="4" Grid.Row="2" ClueValue="{Binding Categories[4][1].Value}" ClueText="{Binding Categories[4][1].Question}" Margin="4" MouseDoubleClick="JeopardyCardDoubleClick" />
+            <local:JeopardyCard Grid.Column="5" Grid.Row="2" ClueValue="{Binding Categories[5][1].Value}" ClueText="{Binding Categories[5][1].Question}" Margin="4" MouseDoubleClick="JeopardyCardDoubleClick" />
+            <!--#endregion -->
+
+            <!--#region Row 3 -->
+            <local:JeopardyCard Grid.Column="0" Grid.Row="3" ClueValue="{Binding Categories[0][2].Value}" ClueText="{Binding Categories[0][2].Question}" Margin="4" MouseDoubleClick="JeopardyCardDoubleClick" />
+            <local:JeopardyCard Grid.Column="1" Grid.Row="3" ClueValue="{Binding Categories[1][2].Value}" ClueText="{Binding Categories[1][2].Question}" Margin="4" MouseDoubleClick="JeopardyCardDoubleClick" />
+            <local:JeopardyCard Grid.Column="2" Grid.Row="3" ClueValue="{Binding Categories[2][2].Value}" ClueText="{Binding Categories[2][2].Question}" Margin="4" MouseDoubleClick="JeopardyCardDoubleClick" />
+            <local:JeopardyCard Grid.Column="3" Grid.Row="3" ClueValue="{Binding Categories[3][2].Value}" ClueText="{Binding Categories[3][2].Question}" Margin="4" MouseDoubleClick="JeopardyCardDoubleClick" />
+            <local:JeopardyCard Grid.Column="4" Grid.Row="3" ClueValue="{Binding Categories[4][2].Value}" ClueText="{Binding Categories[4][2].Question}" Margin="4" MouseDoubleClick="JeopardyCardDoubleClick" />
+            <local:JeopardyCard Grid.Column="5" Grid.Row="3" ClueValue="{Binding Categories[5][2].Value}" ClueText="{Binding Categories[5][2].Question}" Margin="4" MouseDoubleClick="JeopardyCardDoubleClick" />
+            <!--#endregion -->
+
+            <!--#region Row 4 -->
+            <local:JeopardyCard Grid.Column="0" Grid.Row="4" ClueValue="{Binding Categories[0][3].Value}" ClueText="{Binding Categories[0][3].Question}" Margin="4" MouseDoubleClick="JeopardyCardDoubleClick" />
+            <local:JeopardyCard Grid.Column="1" Grid.Row="4" ClueValue="{Binding Categories[1][3].Value}" ClueText="{Binding Categories[1][3].Question}" Margin="4" MouseDoubleClick="JeopardyCardDoubleClick" />
+            <local:JeopardyCard Grid.Column="2" Grid.Row="4" ClueValue="{Binding Categories[2][3].Value}" ClueText="{Binding Categories[2][3].Question}" Margin="4" MouseDoubleClick="JeopardyCardDoubleClick" />
+            <local:JeopardyCard Grid.Column="3" Grid.Row="4" ClueValue="{Binding Categories[3][3].Value}" ClueText="{Binding Categories[3][3].Question}" Margin="4" MouseDoubleClick="JeopardyCardDoubleClick" />
+            <local:JeopardyCard Grid.Column="4" Grid.Row="4" ClueValue="{Binding Categories[4][3].Value}" ClueText="{Binding Categories[4][3].Question}" Margin="4" MouseDoubleClick="JeopardyCardDoubleClick" />
+            <local:JeopardyCard Grid.Column="5" Grid.Row="4" ClueValue="{Binding Categories[5][3].Value}" ClueText="{Binding Categories[5][3].Question}" Margin="4" MouseDoubleClick="JeopardyCardDoubleClick" />
+            <!--#endregion -->
+
+            <!--#region Row 5 -->
+            <local:JeopardyCard Grid.Column="0" Grid.Row="5" ClueValue="{Binding Categories[0][4].Value}" ClueText="{Binding Categories[0][4].Question}" Margin="4" MouseDoubleClick="JeopardyCardDoubleClick" />
+            <local:JeopardyCard Grid.Column="1" Grid.Row="5" ClueValue="{Binding Categories[1][4].Value}" ClueText="{Binding Categories[1][4].Question}" Margin="4" MouseDoubleClick="JeopardyCardDoubleClick" />
+            <local:JeopardyCard Grid.Column="2" Grid.Row="5" ClueValue="{Binding Categories[2][4].Value}" ClueText="{Binding Categories[2][4].Question}" Margin="4" MouseDoubleClick="JeopardyCardDoubleClick" />
+            <local:JeopardyCard Grid.Column="3" Grid.Row="5" ClueValue="{Binding Categories[3][4].Value}" ClueText="{Binding Categories[3][4].Question}" Margin="4" MouseDoubleClick="JeopardyCardDoubleClick" />
+            <local:JeopardyCard Grid.Column="4" Grid.Row="5" ClueValue="{Binding Categories[4][4].Value}" ClueText="{Binding Categories[4][4].Question}" Margin="4" MouseDoubleClick="JeopardyCardDoubleClick" />
+            <local:JeopardyCard Grid.Column="5" Grid.Row="5" ClueValue="{Binding Categories[5][4].Value}" ClueText="{Binding Categories[5][4].Question}" Margin="4" MouseDoubleClick="JeopardyCardDoubleClick" />
+            <!--#endregion -->
+
         </local:GridControl>
     </Canvas>
 </UserControl>

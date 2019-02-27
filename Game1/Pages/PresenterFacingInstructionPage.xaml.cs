@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Game1.Events;
+using Microsoft.Practices.ServiceLocation;
+using Prism.Events;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,15 +23,18 @@ namespace Game1.Pages
     /// </summary>
     public partial class PresenterFacingInstructionPage : Page
     {
+        private IEventAggregator eventAggregator;
+
         public PresenterFacingInstructionPage()
-        {
+        {            
             InitializeComponent();
+            eventAggregator = ServiceLocator.Current.GetInstance<IEventAggregator>();
         }
 
         private void StartGameButton_Click(object sender, RoutedEventArgs e)
         {
-            // TODO: Load the content in both windows
-            // TODO: how to get the shared content from anywhere?
+            var viewModel = ServiceLocator.Current.GetInstance<JeopardyViewModel>();
+            eventAggregator.GetEvent<PubSubEvent<JeopardyViewModel>>().Publish(viewModel);
         }
     }
 }

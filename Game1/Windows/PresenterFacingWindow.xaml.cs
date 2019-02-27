@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Game1.Pages;
+using Microsoft.Practices.ServiceLocation;
+using Prism.Events;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.Composition;
@@ -22,10 +25,17 @@ namespace Game1.Windows
     [Export]
     public partial class PresenterFacingWindow : Window
     {
+        private readonly IEventAggregator eventAggregator;
+
         [ImportingConstructor]
-        public PresenterFacingWindow()
+        public PresenterFacingWindow(IEventAggregator eventAggregator)
         {
             InitializeComponent();
+            eventAggregator.GetEvent<PubSubEvent<JeopardyViewModel>>().Subscribe((vm) =>
+            {                
+                Content = new PresenterFacingGameMain(vm);
+            });
+            this.eventAggregator = eventAggregator;
         }
 
     }

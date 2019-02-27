@@ -12,6 +12,7 @@ using Prism.Modularity;
 using System.ComponentModel.Composition;
 using Prism.Logging;
 using Microsoft.Practices.ServiceLocation;
+using Prism.Events;
 
 namespace GameSystem
 {
@@ -43,7 +44,7 @@ namespace GameSystem
         //    Container.ComposeExportedValue<ILoggerFacade>(this.Logger);
         //    Container.ComposeExportedValue<IModuleCatalog>(this.ModuleCatalog);
         //    Container.ComposeExportedValue<IServiceLocator>(new MefServiceLocatorAdapter(this.Container));
-        //    Container.ComposeExportedValue<AggregateCatalog>(this.AggregateCatalog);            
+        //    Container.ComposeExportedValue<AggregateCatalog>(this.AggregateCatalog);
         //}
 
         protected override DependencyObject CreateShell()

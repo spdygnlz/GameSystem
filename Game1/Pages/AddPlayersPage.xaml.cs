@@ -35,8 +35,9 @@ namespace Game1.Pages
         }
 
         private void NextButton_Click(object sender, RoutedEventArgs e)
-        {
-            JeopardyViewModel viewModel = new JeopardyViewModel(FileName.Text);            
+        {            
+            var viewModel = ServiceLocator.Current.GetInstance<JeopardyViewModel>();
+            viewModel.FileName = FileName.Text;
             
             var playersWindow = ServiceLocator.Current.GetInstance<PlayersFacingWindow>();
             playersWindow.DataContext = viewModel;
