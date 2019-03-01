@@ -29,9 +29,9 @@ namespace Game1
 
         private void OnLoaded(object sender, RoutedEventArgs e)
         {
-            SpeechSynthesizer syn = new SpeechSynthesizer();
-            var voices = syn.GetInstalledVoices();
-            syn.SpeakAsync(ClueText);
+            //SpeechSynthesizer syn = new SpeechSynthesizer();
+            //var voices = syn.GetInstalledVoices();
+            //syn.SpeakAsync(ClueText);
         }
 
         public string ClueText
