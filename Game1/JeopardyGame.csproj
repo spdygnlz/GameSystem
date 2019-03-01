@@ -100,6 +100,8 @@
     <Compile Include="Pages\PresenterFacingInstructionPage.xaml.cs">
       <DependentUpon>PresenterFacingInstructionPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\ClickCard.cs" />
+    <Compile Include="UserControls\ClickClue.cs" />
     <Compile Include="Windows\IntroductionWindow.xaml.cs">
       <DependentUpon>IntroductionWindow.xaml</DependentUpon>
     </Compile>

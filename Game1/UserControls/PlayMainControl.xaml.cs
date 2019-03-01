@@ -3,20 +3,11 @@ using InputCapture;
 using Microsoft.Practices.ServiceLocation;
 using Prism.Events;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel.Composition;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Game1.UserControls
 {
@@ -67,7 +58,7 @@ namespace Game1.UserControls
             var clueWindow = FindChild<ClueWindow>(Parent, clue.ClueName);
 
             // Remove the overlay window
-            GameCanvas.Children.Remove((UIElement)clueWindow);
+            GameCanvas.Children.Remove(clueWindow);
         }
 
         /// <summary>
@@ -178,21 +169,5 @@ namespace Game1.UserControls
             var cardArgs = new ClickCard() { CardName = card.Name };
             eventAggregator.GetEvent<PubSubEvent<ClickCard>>().Publish(cardArgs);
         }
-    }
-
-    /// <summary>
-    /// Simple PubSub event args to drive a card click event
-    /// </summary>
-    internal class ClickCard
-    {
-        public string CardName { get; set; }
-    }
-
-    /// <summary>
-    /// Simple PubSub event args to drive a clue window click event
-    /// </summary>
-    internal class ClickClue
-    {
-        public string ClueName { get; set; }
     }
 }
