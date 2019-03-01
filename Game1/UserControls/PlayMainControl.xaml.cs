@@ -38,6 +38,9 @@ namespace Game1.UserControls
 
         private IKeyboardCapture kb = new LockoutKeyboardCapture(Key.Space);
         
+        /// <summary>
+        /// Constructor
+        /// </summary>
         public PlayMainControl()
         {           
             InitializeComponent();
@@ -54,6 +57,23 @@ namespace Game1.UserControls
             };
         }
 
+        /// <summary>
+        /// Handles removing the clue window so the rest of the screen is displayed
+        /// </summary>
+        /// <param name="clue"></param>
+        private void ClueClick(ClickClue clue)
+        {
+            // Find the clue window in the hierarchy
+            var clueWindow = FindChild<ClueWindow>(Parent, clue.ClueName);
+
+            // Remove the overlay window
+            GameCanvas.Children.Remove((UIElement)clueWindow);
+        }
+
+        /// <summary>
+        /// Handles opening up a clue window from the card that was clicked on
+        /// </summary>
+        /// <param name="cardArgs"></param>
         private void CardClick(ClickCard cardArgs)
         {
             // Get the card that was clicked
@@ -82,9 +102,6 @@ namespace Game1.UserControls
 
             // Set the text on the overlay window
             window.ClueText = card.ClueText;
-
-            // Remove the mouse cursor 
-            Mouse.OverrideCursor = Cursors.None;
 
             // Reset the lockout/timer on the keyboard capture module
             kb.Reset();
@@ -161,26 +178,19 @@ namespace Game1.UserControls
             var cardArgs = new ClickCard() { CardName = card.Name };
             eventAggregator.GetEvent<PubSubEvent<ClickCard>>().Publish(cardArgs);
         }
-
-        private void ClueClick(ClickClue clue)
-        {
-            // Find the clue window in the hierarchy
-            //var clueWindow = ((FrameworkElement)Parent).FindName(clue.ClueName) as ClueWindow;
-            var clueWindow = FindChild<ClueWindow>(Parent, clue.ClueName);
-
-            // Turn the mouse cursor back on
-            Mouse.OverrideCursor = Cursors.Arrow;
-
-            // Remove the overlay window
-            GameCanvas.Children.Remove((UIElement)clueWindow);
-        }
     }
 
+    /// <summary>
+    /// Simple PubSub event args to drive a card click event
+    /// </summary>
     internal class ClickCard
     {
         public string CardName { get; set; }
     }
 
+    /// <summary>
+    /// Simple PubSub event args to drive a clue window click event
+    /// </summary>
     internal class ClickClue
     {
         public string ClueName { get; set; }
