@@ -102,8 +102,15 @@
     </Compile>
     <Compile Include="UserControls\ClickCard.cs" />
     <Compile Include="UserControls\ClickClue.cs" />
+    <Compile Include="UserControls\EditSingleUser.xaml.cs">
+      <DependentUpon>EditSingleUser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\UserViewModel.cs" />
     <Compile Include="Windows\IntroductionWindow.xaml.cs">
       <DependentUpon>IntroductionWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\NewPlayerWindow.xaml.cs">
+      <DependentUpon>NewPlayerWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\PlayersFacingWindow.xaml.cs">
       <DependentUpon>PlayersFacingWindow.xaml</DependentUpon>
@@ -120,6 +127,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\ClueWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\EditSingleUser.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -186,6 +197,10 @@
     <Compile Include="Pages\AddPlayersPage.xaml.cs">
       <DependentUpon>AddPlayersPage.xaml</DependentUpon>
     </Compile>
+    <Page Include="Windows\NewPlayerWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Windows\OpenFile.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -245,9 +260,7 @@
   <ItemGroup>
     <Resource Include="FodyWeavers.xml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ViewModels\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>copy "$(TargetPath)" "$(SolutionDir)GameSystem\$(OutDir)"</PostBuildEvent>

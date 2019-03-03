@@ -30,8 +30,25 @@
                 </StackPanel>
             </StackPanel>
             <StackPanel Grid.Row="2" Orientation="Horizontal">
-                <ListBox Margin="100,0,0,0" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="175" Width="550" />
-                <Button Margin="25" Grid.Column="1" Width="75" Height="35">+ Add Player</Button>
+                <ListBox 
+                    ItemsSource="{Binding Users}"                     
+                    Margin="100,0,0,0" 
+                    Grid.Column="0" 
+                    HorizontalAlignment="Left" 
+                    VerticalAlignment="Top" 
+                    Height="175" Width="550" >
+                    <ListBox.ItemTemplate>
+                        <ItemContainerTemplate>
+                            <Grid>
+                                <StackPanel>
+                                    <TextBlock Text="{Binding FirstName}" />
+                                    <TextBlock Text="{Binding LastName}" />
+                                </StackPanel>
+                            </Grid>
+                        </ItemContainerTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+                <Button Command="{Binding AddUserCommand}" Margin="25" Grid.Column="1" Width="75" Height="35" Click="Button_Click">+ Add Player</Button>
             </StackPanel>
             
         </Grid>

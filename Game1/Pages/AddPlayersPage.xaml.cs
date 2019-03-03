@@ -1,8 +1,13 @@
-﻿using Game1.Windows;
+﻿using Game1.ViewModels;
+using Game1.Windows;
 using Microsoft.Practices.ServiceLocation;
 using Microsoft.Win32;
+using Prism.Events;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel.Composition;
+using System.ComponentModel.Composition.Hosting;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,10 +27,21 @@ namespace Game1.Pages
     /// Interaction logic for PlayPage.xaml
     /// </summary>
     public partial class AddPlayersPage : Page
-    {        
+    {
+        IEventAggregator eventAggregator;
+
+        public ObservableCollection<UserViewModel> Users { get; set; }
+
         public AddPlayersPage()
         {
             InitializeComponent();
+            DataContext = this;
+            
+            Users = new ObservableCollection<UserViewModel>();
+            var container = ServiceLocator.Current.GetInstance<CompositionContainer>();
+            
+            //container.ComposeExportedValue
+            eventAggregator = ServiceLocator.Current.GetInstance<IEventAggregator>();
             NextButton.IsEnabled = false;
         }
 
@@ -67,6 +83,24 @@ namespace Game1.Pages
                 {
                     NextButton.IsEnabled = true;
                 }
+            }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            NewPlayerWindow window = new NewPlayerWindow();
+            if (window.ShowDialog() == true)
+            {
+                UserViewModel userViewModel = new UserViewModel
+                {
+                    FirstName = window.PlayerFirstName,
+                    LastName = window.PlayerLastName,
+                    ButtonId = window.ButtonId,
+                    Score = 0
+                };
+
+                Users.Add(userViewModel);
+                eventAggregator.GetEvent<PubSubEvent<UserViewModel>>().Publish(userViewModel);
             }
         }
     }
