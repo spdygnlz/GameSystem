@@ -1,6 +1,8 @@
-﻿using Prism.Events;
+﻿using Game1.ViewModels;
+using Prism.Events;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel.Composition;
 using System.Data;
 using System.Linq;
@@ -16,6 +18,8 @@ namespace Game1
         private JeopardyModel model;
         private GameState State;
         private readonly IEventAggregator eventAggregator;
+
+        public ObservableCollection<UserViewModel> Users { get; set; }
 
         public string FileName
         {            

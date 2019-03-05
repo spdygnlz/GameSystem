@@ -38,14 +38,15 @@ namespace GameSystem
             return new DirectoryModuleCatalog() { ModulePath = path };
         }
 
-        //protected override void ConfigureContainer()
-        //{
-        //    base.ConfigureContainer();
+        protected override void ConfigureContainer()
+        {
+            base.ConfigureContainer();
+            Container.ComposeExportedValue(Container);
         //    Container.ComposeExportedValue<ILoggerFacade>(this.Logger);
         //    Container.ComposeExportedValue<IModuleCatalog>(this.ModuleCatalog);
         //    Container.ComposeExportedValue<IServiceLocator>(new MefServiceLocatorAdapter(this.Container));
         //    Container.ComposeExportedValue<AggregateCatalog>(this.AggregateCatalog);
-        //}
+        }
 
         protected override DependencyObject CreateShell()
         {        

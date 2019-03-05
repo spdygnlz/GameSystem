@@ -36,11 +36,11 @@ namespace Game1.Pages
         {
             InitializeComponent();
             DataContext = this;
-            
             Users = new ObservableCollection<UserViewModel>();
+
             var container = ServiceLocator.Current.GetInstance<CompositionContainer>();
-            
-            //container.ComposeExportedValue
+            container.ComposeExportedValue < ObservableCollection<UserViewModel> > ("Players", Users);
+                        
             eventAggregator = ServiceLocator.Current.GetInstance<IEventAggregator>();
             NextButton.IsEnabled = false;
         }
@@ -54,6 +54,7 @@ namespace Game1.Pages
         {            
             var viewModel = ServiceLocator.Current.GetInstance<JeopardyViewModel>();
             viewModel.FileName = FileName.Text;
+            viewModel.Users = Users;
             
             var playersWindow = ServiceLocator.Current.GetInstance<PlayersFacingWindow>();
             playersWindow.DataContext = viewModel;
