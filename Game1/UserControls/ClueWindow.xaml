@@ -22,9 +22,8 @@
     </UserControl.Triggers>
     <Grid Background="#101a7c">
         <Border BorderBrush="Black" BorderThickness="0">
-            
-                <Border>
-                    <TextBlock
+            <Border>
+                <TextBlock
                             Padding="40"
                             Text="{Binding ElementName=clueWindow, Path=ClueText}"
                             TextAlignment="Center"
@@ -34,17 +33,18 @@
                             FontFamily="Enchanted"
                             FontWeight="Bold"
                             Foreground="White" MaxWidth="1000">
-                        <TextBlock.Effect>
-                            <DropShadowEffect
+                    <TextBlock.Effect>
+                        <DropShadowEffect
                             ShadowDepth="10"
                             Direction="315"
                             Color="Black"
                             Opacity="1.0"
                             BlurRadius="0"/>
-                        </TextBlock.Effect>
-                    </TextBlock>
-                </Border>
-            
+                    </TextBlock.Effect>
+                </TextBlock>
+            </Border>
         </Border>
+
+        <ProgressBar Width="100" Margin="0, 150, 0, 0" Height="20" Value="{Binding TimerValue}" Name="TimerProgressBar" />
     </Grid>
 </UserControl>

@@ -8,7 +8,7 @@
         d:DesignHeight="400" d:DesignWidth="700" >
     <UserControl.Resources>
 
-
+        
         <ControlTemplate TargetType="{x:Type Label}" x:Key="LabelTemplate">
             <Viewbox Stretch="Uniform">
                 <Label FontFamily="./Fonts/#Helvetica" 
@@ -58,15 +58,15 @@
     </UserControl.Resources>
 
     <Canvas Background="Transparent" x:Name="GameCanvas" >
-        <local:GridControl x:Name="MainGrid" 
-              Background="#051176" 
-              Canvas.Left="0" 
-              Canvas.Top="0" 
+        <local:GridControl x:Name="MainGrid"
+              Background="#051176"
+              Canvas.Left="0"
+              Canvas.Top="0"
               Width="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Canvas}}, Path=ActualWidth}"
-              Height="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Canvas}}, Path=ActualHeight}"                            
+              Height="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Canvas}}, Path=ActualHeight}"
               ShowCustomGridLines="True"
-              GridLineBrush="Black" 
-              GridLineThickness="4"                           
+              GridLineBrush="Black"
+              GridLineThickness="4"
               >
             <Grid.ColumnDefinitions>
                 <ColumnDefinition />
@@ -84,8 +84,8 @@
                 <local:GridControlRowDefinition />
                 <local:GridControlRowDefinition />
             </Grid.RowDefinitions>
-            
-            <!--#region Headers -->            
+
+            <!--#region Headers -->
             <Label Grid.Column="0" Grid.Row="0" Content="{Binding Categories[0].Name}" HorizontalAlignment="Center" VerticalAlignment="Center" Template="{StaticResource LabelTemplate}" />
             <Label Grid.Column="1" Grid.Row="0" Content="{Binding Categories[1].Name}" HorizontalAlignment="Center" VerticalAlignment="Center" Template="{StaticResource LabelTemplate}" />
             <Label Grid.Column="2" Grid.Row="0" Content="{Binding Categories[2].Name}" HorizontalAlignment="Center" VerticalAlignment="Center" Template="{StaticResource LabelTemplate}" />
@@ -93,7 +93,7 @@
             <Label Grid.Column="4" Grid.Row="0" Content="{Binding Categories[4].Name}" HorizontalAlignment="Center" VerticalAlignment="Center" Template="{StaticResource LabelTemplate}" />
             <Label Grid.Column="5" Grid.Row="0" Content="{Binding Categories[5].Name}" HorizontalAlignment="Center" VerticalAlignment="Center" Template="{StaticResource LabelTemplate}" />
             <!--#endregion  -->
-            
+
             <!--#region Row 1 -->
             <local:JeopardyCard Grid.Column="0" Grid.Row="1" ClueValue="{Binding Categories[0][0].Value}" ClueText="{Binding Categories[0][0].Question}" Margin="4" MouseDoubleClick="JeopardyCardDoubleClick" x:Name="Card00" />
             <local:JeopardyCard Grid.Column="1" Grid.Row="1" ClueValue="{Binding Categories[1][0].Value}" ClueText="{Binding Categories[1][0].Question}" Margin="4" MouseDoubleClick="JeopardyCardDoubleClick" x:Name="Card10" />

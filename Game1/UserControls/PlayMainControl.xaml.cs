@@ -93,6 +93,7 @@ namespace Game1.UserControls
 
             // Set the text on the overlay window
             window.ClueText = card.ClueText;
+            //window.TimerLength = // TODO: Add a dependency property?  regular property?  should be set from the main presenter window somehow?
 
             // Reset the lockout/timer on the keyboard capture module
             kb.Reset();

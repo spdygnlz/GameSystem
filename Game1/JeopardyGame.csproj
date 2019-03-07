@@ -105,6 +105,9 @@
     <Compile Include="UserControls\EditSingleUser.xaml.cs">
       <DependentUpon>EditSingleUser.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\PlayersListControl.xaml.cs">
+      <DependentUpon>PlayersListControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewModels\UserViewModel.cs" />
     <Compile Include="Windows\IntroductionWindow.xaml.cs">
       <DependentUpon>IntroductionWindow.xaml</DependentUpon>
@@ -131,6 +134,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\EditSingleUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\PlayersListControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

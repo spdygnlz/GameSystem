@@ -17,5 +17,9 @@
         <ContentControl Name="MainContent" Grid.Column="0" >
             <userControls:PlayMainControl />
         </ContentControl>
+
+        <Viewbox  Grid.Column="1" HorizontalAlignment="Stretch"  VerticalAlignment="Top" >
+            <userControls:PlayersListControl DataContext="{Binding}" />
+        </Viewbox>
     </Grid>
 </Page>
