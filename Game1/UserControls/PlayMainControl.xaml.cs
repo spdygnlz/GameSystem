@@ -1,4 +1,5 @@
 ﻿using GameInterfaces;
+using Game1.Events;
 using InputCapture;
 using Microsoft.Practices.ServiceLocation;
 using Prism.Events;
@@ -19,6 +20,8 @@ namespace Game1.UserControls
     {
         private IEventAggregator eventAggregator;
 
+        IKeyboardCapture kb;
+
         public string GameName
         {
             get
@@ -27,7 +30,6 @@ namespace Game1.UserControls
             }
         }
 
-        private IKeyboardCapture kb = new LockoutKeyboardCapture(Key.Space);
         
         /// <summary>
         /// Constructor
@@ -37,15 +39,10 @@ namespace Game1.UserControls
             InitializeComponent();
 
             eventAggregator = ServiceLocator.Current.GetInstance<IEventAggregator>();
+            kb = ServiceLocator.Current.GetInstance<IKeyboardCapture>();
 
             eventAggregator.GetEvent<PubSubEvent<ClickCard>>().Subscribe((card) => CardClick(card));
             eventAggregator.GetEvent<PubSubEvent<ClickClue>>().Subscribe((clue) => ClueClick(clue));
-
-            kb.RegisterWindow(this);
-            kb.KeyboardNotification += (sender, args) => 
-            {
-                MessageBox.Show($"Got {args.Key} at {args.Time.ToString(@"ss\:fff")}");
-            };
         }
 
         /// <summary>
@@ -55,10 +52,12 @@ namespace Game1.UserControls
         private void ClueClick(ClickClue clue)
         {
             // Find the clue window in the hierarchy
-            var clueWindow = FindChild<ClueWindow>(Parent, clue.ClueName);
+            var clueWindow = FindChild<ClueWindow>(Parent, clue.ClueName);            
 
             // Remove the overlay window
             GameCanvas.Children.Remove(clueWindow);
+
+            clueWindow.Dispose();
         }
 
         /// <summary>
@@ -93,10 +92,9 @@ namespace Game1.UserControls
 
             // Set the text on the overlay window
             window.ClueText = card.ClueText;
+            window.ClueValue = (int)card.ClueValue;
+            window.ClueAnswer = card.ClueAnswer;
             //window.TimerLength = // TODO: Add a dependency property?  regular property?  should be set from the main presenter window somehow?
-
-            // Reset the lockout/timer on the keyboard capture module
-            kb.Reset();
 
             // Add the overlay window to the main window
             GameCanvas.Children.Add(window);

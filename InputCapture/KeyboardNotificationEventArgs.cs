@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows;
 using System.Windows.Input;
 
 namespace InputCapture
@@ -7,5 +8,6 @@ namespace InputCapture
     {
         public TimeSpan Time { get; set; }
         public Key Key { get; set; }
+        public UIElement Owner { get; set; }
     }
 }

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Game1.Windows"
         mc:Ignorable="d"
-        Title="NewPlayerWindow" Height="250" Width="400">
+        Title="NewPlayerWindow" Height="250" Width="400" TextInput="Window_TextInput">
     <DockPanel>
         <Image DockPanel.Dock="Left" Height="75" Width="75" Margin="20"/>
 

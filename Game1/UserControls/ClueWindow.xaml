@@ -6,6 +6,9 @@
              xmlns:local="clr-namespace:Game1"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300" x:Name="clueWindow">
+    <UserControl.Resources>
+        <BooleanToVisibilityConverter x:Key="BoolToVis"/>
+    </UserControl.Resources>
     <UserControl.Triggers>
         <EventTrigger RoutedEvent="UserControl.Loaded" SourceName="clueWindow">
             <EventTrigger.Actions>
@@ -22,8 +25,20 @@
     </UserControl.Triggers>
     <Grid Background="#101a7c">
         <Border BorderBrush="Black" BorderThickness="0">
-            <Border>
-                <TextBlock
+            <Grid Name="ClueTextGrid">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1.5*" />
+                    <ColumnDefinition Width="1.5*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2*" />
+                    <RowDefinition Height="7*"/>
+                    <RowDefinition Height="2*" />
+                </Grid.RowDefinitions>
+                
+                <TextBlock Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4"
                             Padding="40"
                             Text="{Binding ElementName=clueWindow, Path=ClueText}"
                             TextAlignment="Center"
@@ -42,9 +57,16 @@
                             BlurRadius="0"/>
                     </TextBlock.Effect>
                 </TextBlock>
-            </Border>
-        </Border>
+                
+                <ProgressBar 
+                    Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2"                  
+                    Height="20" Value="{Binding TimerValue}" 
+                    Name="TimerProgressBar" 
+                    VerticalAlignment="Center" HorizontalAlignment="Stretch" />
 
-        <ProgressBar Width="100" Margin="0, 150, 0, 0" Height="20" Value="{Binding TimerValue}" Name="TimerProgressBar" />
+                <Button Grid.Column="1" Name="CorrectButton" Content="Correct" Background="Green" Margin="10" Visibility="{Binding PlayerClicked, Converter={StaticResource BoolToVis}}" Click="CorrectButtonClicked" />
+                <Button Grid.Column="2" Name="IncorrectButton" Content="Incorrect" Background="Red" Margin="10" Visibility="{Binding PlayerClicked, Converter={StaticResource BoolToVis}}" Click="IncorrectButton_Click" />
+            </Grid>
+        </Border>
     </Grid>
 </UserControl>

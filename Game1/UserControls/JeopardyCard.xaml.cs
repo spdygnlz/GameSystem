@@ -45,6 +45,17 @@ namespace Game1
         public static readonly DependencyProperty ClueTextProperty =
             DependencyProperty.Register("ClueText", typeof(string), typeof(JeopardyCard), new PropertyMetadata("Empty"));
 
+        public string ClueAnswer
+        {
+            get { return (string)GetValue(ClueAnswerProperty); }
+            set { SetValue(ClueAnswerProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for ClueText.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty ClueAnswerProperty =
+            DependencyProperty.Register("ClueAnswer", typeof(string), typeof(JeopardyCard), new PropertyMetadata("Empty"));
+
+
         public bool DailyDouble
         {
             get { return (bool)GetValue(DailyDoubleProperty); }

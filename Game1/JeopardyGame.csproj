@@ -100,11 +100,12 @@
     <Compile Include="Pages\PresenterFacingInstructionPage.xaml.cs">
       <DependentUpon>PresenterFacingInstructionPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\ClickCard.cs" />
-    <Compile Include="UserControls\ClickClue.cs" />
+    <Compile Include="Events\ClickCard.cs" />
+    <Compile Include="Events\ClickClue.cs" />
     <Compile Include="UserControls\EditSingleUser.xaml.cs">
       <DependentUpon>EditSingleUser.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Events\PlayerScoreUpdate.cs" />
     <Compile Include="UserControls\PlayersListControl.xaml.cs">
       <DependentUpon>PlayersListControl.xaml</DependentUpon>
     </Compile>

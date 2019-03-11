@@ -1,4 +1,6 @@
-﻿using System;
+﻿using InputCapture;
+using Microsoft.Practices.ServiceLocation;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,11 +26,12 @@ namespace Game1.Windows
         public int ButtonId { get; set; }
         public string ImagePath { get; set; }
 
-
         public NewPlayerWindow()
         {
+            DataContext = this;
             InitializeComponent();
         }
+
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)
         {
@@ -51,6 +54,14 @@ namespace Game1.Windows
 
             DialogResult = true;
             Close();
+        }
+
+        private void Window_TextInput(object sender, TextCompositionEventArgs e)
+        {
+            if (int.TryParse(e.Text, out int buttonId))
+            {
+                ButtonId = buttonId;
+            }
         }
     }
 }

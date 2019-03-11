@@ -14,5 +14,7 @@ namespace InputCapture
         void PreviewKeyUp(object sender, KeyEventArgs e);
         void Reset();
         void RegisterWindow(UIElement window);
+        int LookupIntKey(Key key);
+        char LookupCharKey(Key key);
     }
 }

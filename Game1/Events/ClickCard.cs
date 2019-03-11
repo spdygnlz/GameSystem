@@ -1,4 +1,4 @@
-﻿namespace Game1.UserControls
+﻿namespace Game1.Events
 {
     /// <summary>
     /// Simple PubSub event args to drive a card click event
