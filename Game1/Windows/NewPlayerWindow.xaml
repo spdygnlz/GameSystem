@@ -24,7 +24,7 @@
             
             <StackPanel Grid.Row="0" Orientation="Horizontal">
                 <Label>Button ID:</Label>
-                <Label Content="{Binding ButtonId}" />
+                <Label Content="{Binding ButtonId, Mode=TwoWay}" />
             </StackPanel>
             
             <TextBlock Grid.Row="1" />

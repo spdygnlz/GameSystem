@@ -2,6 +2,7 @@
 using Microsoft.Practices.ServiceLocation;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,7 +20,7 @@ namespace Game1.Windows
     /// <summary>
     /// Interaction logic for NewPlayerWindow.xaml
     /// </summary>
-    public partial class NewPlayerWindow : Window
+    public partial class NewPlayerWindow : Window, INotifyPropertyChanged
     {
         public string PlayerFirstName { get; set; }
         public string PlayerLastName { get; set; }
@@ -32,6 +33,7 @@ namespace Game1.Windows
             InitializeComponent();
         }
 
+        public event PropertyChangedEventHandler PropertyChanged;
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)
         {
