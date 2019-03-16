@@ -10,7 +10,6 @@ using System.Speech.Synthesis;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -21,16 +20,17 @@ using System.Windows.Shapes;
 
 namespace Game1
 {
+
     /// <summary>
     /// Interaction logic for ClueWindow.xaml
     /// </summary>
-    public partial class ClueWindow : ClueWindowBase, IDisposable, INotifyPropertyChanged
+    public partial class PresenterClueWindow : ClueWindowBase, INotifyPropertyChanged
     {
         IKeyboardCapture kb = null;
         IEventAggregator eventAggregator = null;
         private int LastPlayerClicked = -1;
 
-        public ClueWindow()
+        public PresenterClueWindow()
         {
             InitializeComponent();
             this.Loaded += OnLoaded;
@@ -65,6 +65,7 @@ namespace Game1
             // Wheres the timer?
         }
 
+        
         public event PropertyChangedEventHandler PropertyChanged;
 
         private void CorrectButtonClicked(object sender, RoutedEventArgs e)

@@ -30,7 +30,19 @@ namespace Game1.UserControls
             }
         }
 
-        
+
+
+        public bool IsPresenter
+        {
+            get { return (bool)GetValue(IsPresenterProperty); }
+            set { SetValue(IsPresenterProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for ClueText.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty IsPresenterProperty =
+            DependencyProperty.Register("IsPresenter", typeof(bool), typeof(PlayMainControl), new UIPropertyMetadata(null));
+
+
         /// <summary>
         /// Constructor
         /// </summary>
@@ -52,7 +64,7 @@ namespace Game1.UserControls
         private void ClueClick(ClickClue clue)
         {
             // Find the clue window in the hierarchy
-            var clueWindow = FindChild<ClueWindow>(Parent, clue.ClueName);            
+            var clueWindow = FindChild<ClueWindowBase>(Parent, clue.ClueName);            
 
             // Remove the overlay window
             GameCanvas.Children.Remove(clueWindow);
@@ -71,12 +83,16 @@ namespace Game1.UserControls
             var card = FindName(cardArgs.CardName) as JeopardyCard;
 
             // Create the new window to show over the grid
-            ClueWindow window = new ClueWindow() { Name = $"Clue{cardArgs.CardName}"};
+            ClueWindowBase window;
+            if (IsPresenter)
+                window = new PresenterClueWindow() { Name = $"Clue{cardArgs.CardName}" };
+            else
+                window = new ClueWindow() { Name = $"Clue{cardArgs.CardName}" };
 
             // Hook up the event that will close the window when it's double clicked
             window.MouseDoubleClick += (s, args) =>             
             {
-                var clueWindow = s as ClueWindow;
+                var clueWindow = s as ClueWindowBase;
                 eventAggregator.GetEvent<PubSubEvent<ClickClue>>().Publish(new ClickClue { ClueName = clueWindow.Name });
             };
 

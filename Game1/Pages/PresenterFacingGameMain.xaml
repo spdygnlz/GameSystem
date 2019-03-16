@@ -20,7 +20,7 @@
         </Grid.RowDefinitions>
         
         <ContentControl Name="MainContent" Grid.Column="0" Grid.Row="0" >
-            <userControls:PlayMainControl />
+            <userControls:PlayMainControl IsPresenter="true" />
         </ContentControl>
 
         <Viewbox Grid.Column="1" Grid.RowSpan="2" HorizontalAlignment="Stretch"  VerticalAlignment="Top" >
