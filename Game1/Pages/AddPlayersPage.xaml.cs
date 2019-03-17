@@ -92,7 +92,7 @@ namespace Game1.Pages
             NewPlayerWindow window = new NewPlayerWindow();
             if (window.ShowDialog() == true)
             {
-                UserViewModel userViewModel = new UserViewModel
+                UserViewModel userViewModel = new UserViewModel (eventAggregator)
                 {
                     FirstName = window.PlayerFirstName,
                     LastName = window.PlayerLastName,

@@ -26,60 +26,21 @@ namespace Game1
     /// </summary>
     public partial class ClueWindow : ClueWindowBase, IDisposable, INotifyPropertyChanged
     {
-        IKeyboardCapture kb = null;
-        IEventAggregator eventAggregator = null;
-        private int LastPlayerClicked = -1;
-
         public ClueWindow()
         {
             InitializeComponent();
-            this.Loaded += OnLoaded;
+         
             DataContext = this;
-        }
 
-        private void OnLoaded(object sender, RoutedEventArgs e)
-        {
-            //SpeechSynthesizer syn = new SpeechSynthesizer();
-            //var voices = syn.GetInstalledVoices();
-            //syn.SpeakAsync(ClueText);
-
-            kb = ServiceLocator.Current.GetInstance<IKeyboardCapture>();
-            kb.Reset();
-            kb.KeyboardNotification += KeyboardNotification;
-
-            eventAggregator = ServiceLocator.Current.GetInstance<IEventAggregator>();
-        }
-
-        private void KeyboardNotification(object sender, KeyboardNotificationEventArgs e)
-        {
-            // Turn on the buttons
-            PlayerClicked = true;
-
-            LastPlayerClicked = kb.LookupIntKey(e.Key);
+            // TODO: start timer?
         }
 
         public override void Dispose()
         {
-            kb.KeyboardNotification -= KeyboardNotification;
 
             // Wheres the timer?
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
-
-        private void CorrectButtonClicked(object sender, RoutedEventArgs e)
-        {
-            PlayerScoreUpdate update = new PlayerScoreUpdate { ButtonId = LastPlayerClicked, ScoreAmount = (ClueValue) };
-            eventAggregator.GetEvent<PubSubEvent<PlayerScoreUpdate>>().Publish(update);                        
-        }
-
-        private void IncorrectButton_Click(object sender, RoutedEventArgs e)
-        {
-            PlayerScoreUpdate update = new PlayerScoreUpdate { ButtonId = LastPlayerClicked, ScoreAmount = (-1 * ClueValue) };
-            eventAggregator.GetEvent<PubSubEvent<PlayerScoreUpdate>>().Publish(update);
-            PlayerClicked = false;
-            LastPlayerClicked = -1;
-            kb.Reset();
-        }
     }
 }
