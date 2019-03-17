@@ -22,6 +22,11 @@ namespace Game1.ViewModels
             eventAggregator.GetEvent<PubSubEvent<PlayerScoreUpdate>>().Subscribe(UpdateScore);            
         }
 
+        public UserViewModel()
+        {
+
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         private void UpdateScore(PlayerScoreUpdate obj)

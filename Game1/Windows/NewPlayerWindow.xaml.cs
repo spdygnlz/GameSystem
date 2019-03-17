@@ -65,5 +65,14 @@ namespace Game1.Windows
                 ButtonId = buttonId;
             }
         }
+
+        private void PlayerName_TextInput(object sender, TextCompositionEventArgs e)
+        {
+            if (int.TryParse(e.Text, out int buttonId))
+            {
+                ButtonId = buttonId;
+                e.Handled = true;
+            }
+        }
     }
 }

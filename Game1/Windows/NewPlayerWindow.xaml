@@ -31,7 +31,12 @@
             
             <Label Grid.Row="2" Content="Enter Player Name:" HorizontalAlignment="Left" VerticalAlignment="Top"/>
             
-            <TextBox Grid.Row="3" HorizontalAlignment="Left" Height="23" TextWrapping="NoWrap" Text="Player Name" Name="PlayerName" VerticalAlignment="Top" Width="178"/>
+            <TextBox 
+                Grid.Row="3" 
+                HorizontalAlignment="Left" Height="23" 
+                TextWrapping="NoWrap" Text="Player Name" 
+                PreviewTextInput="PlayerName_TextInput"
+                Name="PlayerName" VerticalAlignment="Top" Width="178"/>
         </Grid>
 
     </DockPanel>

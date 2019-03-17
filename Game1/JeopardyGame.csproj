@@ -85,6 +85,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Converters\IsLessThanConverter.cs" />
+    <Compile Include="DesignData\DesignTimeUsers.cs" />
     <Compile Include="Models\JeopardyCategory.cs" />
     <Compile Include="Models\JeopardyModelHelper.cs" />
     <Compile Include="Models\JeopardyQuestion.cs" />
