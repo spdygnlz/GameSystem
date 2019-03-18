@@ -39,7 +39,7 @@ namespace Game1.Pages
             Users = new ObservableCollection<UserViewModel>();
 
             var container = ServiceLocator.Current.GetInstance<CompositionContainer>();
-            container.ComposeExportedValue < ObservableCollection<UserViewModel> > ("Players", Users);
+            container.ComposeExportedValue("Players", Users);
                         
             eventAggregator = ServiceLocator.Current.GetInstance<IEventAggregator>();
             NextButton.IsEnabled = false;
@@ -102,7 +102,7 @@ namespace Game1.Pages
 
                 Users.Add(userViewModel);
                 eventAggregator.GetEvent<PubSubEvent<UserViewModel>>().Publish(userViewModel);
-            }
+            } 
         }
     }
 }

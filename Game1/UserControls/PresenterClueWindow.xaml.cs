@@ -60,7 +60,11 @@ namespace Game1
 
         public override void Dispose()
         {
-            kb.KeyboardNotification -= KeyboardNotification;
+            if (kb != null)
+            {
+                kb.KeyboardNotification -= KeyboardNotification;
+            }
+
 
             // Wheres the timer?
         }
@@ -71,7 +75,10 @@ namespace Game1
         private void CorrectButtonClicked(object sender, RoutedEventArgs e)
         {
             PlayerScoreUpdate update = new PlayerScoreUpdate { ButtonId = LastPlayerClicked, ScoreAmount = (ClueValue) };
-            eventAggregator.GetEvent<PubSubEvent<PlayerScoreUpdate>>().Publish(update);                        
+            eventAggregator.GetEvent<PubSubEvent<PlayerScoreUpdate>>().Publish(update);
+
+            var clueWindow = this as ClueWindowBase;
+            eventAggregator.GetEvent<PubSubEvent<ClickClue>>().Publish(new ClickClue { ClueName = clueWindow.Name });
         }
 
         private void IncorrectButton_Click(object sender, RoutedEventArgs e)
