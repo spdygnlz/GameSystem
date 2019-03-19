@@ -11,6 +11,8 @@
     <UserControl.Resources>
         <des:DesignTimeUsers x:Key="Ho" />
         <conv:IsLessThanConverter x:Key="isLessThanConverter" />
+        <BooleanToVisibilityConverter x:Key="boolToVisConverter" />
+        <conv:InverseBoolToVisibilityConverter x:Key="inverseBoolToVisConverter" />
 
         <Style TargetType="TextBlock" x:Key="ScoreStyle">
             <Style.Triggers>
@@ -31,14 +33,14 @@
     <ListBox ItemsSource="{Binding Users}">
         <ListBox.ItemTemplate>
             <ItemContainerTemplate>
-                <Grid HorizontalAlignment="Stretch" VerticalAlignment="Top" Width="60" Style="{Binding Source={StaticResource SelectedLine}}">
+                <Grid HorizontalAlignment="Stretch" VerticalAlignment="Top" Width="60" Style="{Binding Source={StaticResource SelectedLine}}" PreviewMouseLeftButtonDown="Grid_PreviewMouseLeftButtonDown">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="6*" />
                         <ColumnDefinition Width="4*"/>
                     </Grid.ColumnDefinitions>
                     <TextBlock Grid.Column="0" HorizontalAlignment="Left" Text="{Binding FirstName}" FontSize="8"  />
                     <TextBlock Grid.Column="1" HorizontalAlignment="Left" Text="{Binding Score}" FontSize="8" Style="{Binding Source={StaticResource ScoreStyle}}" />
-               </Grid>
+                </Grid>
             </ItemContainerTemplate>
         </ListBox.ItemTemplate>
     </ListBox>

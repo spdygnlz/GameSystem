@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Game1.ViewModels;
+using Game1.Windows;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +25,23 @@ namespace Game1.UserControls
         public PlayersListControl()
         {
             InitializeComponent();
+        }
+
+        private void Grid_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ClickCount == 2)
+            {
+                var grid = sender as Grid;
+                var user = grid.DataContext as UserViewModel;
+                //user.IsInEditMode = true;
+
+                EditPlayerScoreWindow editWindow = new EditPlayerScoreWindow(user);
+                                
+                if (editWindow.ShowDialog().Value)
+                {
+                    user.Score = editWindow.Score;
+                }
+            }
         }
     }
 }

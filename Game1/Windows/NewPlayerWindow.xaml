@@ -5,38 +5,41 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Game1.Windows"
         mc:Ignorable="d"
+        FocusManager.FocusedElement="{Binding ElementName=PlayerName}"
         Title="NewPlayerWindow" Height="250" Width="400" TextInput="Window_TextInput">
     <DockPanel>
         <Image DockPanel.Dock="Left" Height="75" Width="75" Margin="20"/>
 
-        <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" Height="35" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="25">
-            <Button Name="CancelButton" Content="Cancel" Height="35" Width="75" Click="CancelButton_Click" />
-            <Button Name="SaveButton" Content="Save" Height="35" Width="75" Click="SaveButton_Click" />
+        <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Right" >
+            <Button Name="CancelButton" Content="Cancel" Height="30" Width="75" Margin="10" IsCancel="True" Click="CancelButton_Click" />
+            <Button Name="SaveButton" Content="Save" Height="30" Margin="10" Width="75" IsDefault="True" Click="SaveButton_Click" />
         </StackPanel>
 
-        <Grid VerticalAlignment="Top" HorizontalAlignment="Left">
+        <Grid HorizontalAlignment="Left" VerticalAlignment="Center">
             <Grid.RowDefinitions>
                 <RowDefinition Height="3*" />
                 <RowDefinition Height="3*" />
                 <RowDefinition Height="3*" />
                 <RowDefinition Height="3*" />
             </Grid.RowDefinitions>
-            
+
             <StackPanel Grid.Row="0" Orientation="Horizontal">
                 <Label>Button ID:</Label>
                 <Label Content="{Binding ButtonId, Mode=TwoWay}" />
             </StackPanel>
-            
+
             <TextBlock Grid.Row="1" />
-            
+
             <Label Grid.Row="2" Content="Enter Player Name:" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            
+
             <TextBox 
                 Grid.Row="3" 
                 HorizontalAlignment="Left" Height="23" 
+                VerticalAlignment="Center"
                 TextWrapping="NoWrap" Text="Player Name" 
                 PreviewTextInput="PlayerName_TextInput"
-                Name="PlayerName" VerticalAlignment="Top" Width="178"/>
+                GotKeyboardFocus="PlayerName_GotKeyboardFocus"
+                Name="PlayerName" Width="178"/>
         </Grid>
 
     </DockPanel>

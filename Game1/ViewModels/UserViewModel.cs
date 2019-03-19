@@ -17,16 +17,27 @@ namespace Game1.ViewModels
         public int Score { get; set; }
         public string Icon { get; set; }
         public int ButtonId { get; set; }
+        public bool IsInEditMode
+        {
+            get => _isInEditMode;
+            set
+            {
+                kb.SuspendNotifications(value);
+                _isInEditMode = value;
+            }
+        }
 
         public bool Selected { get; set; }
 
         private IKeyboardCapture kb;
+        private bool _isInEditMode;
 
         public UserViewModel(IEventAggregator eventAggregator, IKeyboardCapture keyboard)
         {
             eventAggregator.GetEvent<PubSubEvent<PlayerScoreUpdate>>().Subscribe(UpdateScore);
             kb = keyboard;
             Selected = false;
+            IsInEditMode = false;
 
             kb.KeyboardNotification += Kb_KeyboardNotification;
             kb.KeyboardReset += (s, e) => Selected = false;

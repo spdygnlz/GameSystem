@@ -74,5 +74,14 @@ namespace Game1.Windows
                 e.Handled = true;
             }
         }
+
+        private void PlayerName_GotKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
+        {
+            TextBox tb = (sender as TextBox);
+            if (tb != null)
+            {
+                tb.SelectAll();
+            }
+        }
     }
 }

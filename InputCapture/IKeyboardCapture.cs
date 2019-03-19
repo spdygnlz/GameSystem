@@ -17,5 +17,6 @@ namespace InputCapture
         void RegisterWindow(UIElement window);
         int LookupIntKey(Key key);
         char LookupCharKey(Key key);
+        void SuspendNotifications(bool value);
     }
 }

@@ -21,6 +21,7 @@ namespace InputCapture
         private TimeSpan timeout = new TimeSpan(0, 0, 0, 0, 1000);
         private Stopwatch stopwatch = new Stopwatch();
         private UIElement owner = null;
+        private bool _suspendNotifications = false;
 
         public static Dictionary<Key, int> IntKeyLookup = new Dictionary<Key, int>()
         {
@@ -41,6 +42,8 @@ namespace InputCapture
 
         public void PreviewKeyDown(object sender, KeyEventArgs e)
         {
+            if (_suspendNotifications) return;
+
             if (!IsParentOf(sender as UIElement, owner)) return;
 
             if (_isLocked && e.Key != _resetKey)
@@ -51,6 +54,8 @@ namespace InputCapture
 
         public void KeyDown(object sender, KeyEventArgs e)
         {
+            if (_suspendNotifications) return;
+
             if (!IsParentOf(sender as UIElement, owner)) return;
 
             if (e.Key == _resetKey)
@@ -60,11 +65,13 @@ namespace InputCapture
             else
             {
                 OnKeyboardNotification(e.Key, stopwatch.Elapsed);
-            }                                  
+            }
         }
 
         public void KeyUp(object sender, KeyEventArgs e)
         {
+            if (_suspendNotifications) return;
+
             if (!IsParentOf(sender as UIElement, owner)) return;
 
             if (e.Key == _resetKey)
@@ -76,6 +83,7 @@ namespace InputCapture
 
         public void PreviewKeyUp(object sender, KeyEventArgs e)
         {
+            if (_suspendNotifications) return;
 
         }
 
@@ -146,6 +154,11 @@ namespace InputCapture
         public char LookupCharKey(Key key)
         {
             throw new NotImplementedException();
+        }
+
+        public void SuspendNotifications(bool value)
+        {
+            
         }
     }
 }
