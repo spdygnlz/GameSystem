@@ -20,11 +20,18 @@
                 </DataTrigger>
             </Style.Triggers>
         </Style>
+        <Style x:Key="SelectedLine">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding Path=Selected}" Value="True">
+                    <Setter Property="Grid.Background" Value="Orange"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
     </UserControl.Resources>
     <ListBox ItemsSource="{Binding Users}">
         <ListBox.ItemTemplate>
             <ItemContainerTemplate>
-                <Grid HorizontalAlignment="Stretch" VerticalAlignment="Top" Width="60">
+                <Grid HorizontalAlignment="Stretch" VerticalAlignment="Top" Width="60" Style="{Binding Source={StaticResource SelectedLine}}">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="6*" />
                         <ColumnDefinition Width="4*"/>

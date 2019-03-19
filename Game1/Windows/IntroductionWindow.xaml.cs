@@ -1,8 +1,10 @@
-﻿using Microsoft.Practices.ServiceLocation;
+﻿using InputCapture;
+using Microsoft.Practices.ServiceLocation;
 using Prism.Events;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
+using System.ComponentModel.Composition.Hosting;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,7 +28,11 @@ namespace Game1.Windows
         [ImportingConstructor]
         public IntroductionWindow()
         {
-            InitializeComponent();                        
+            InitializeComponent();
+
+            IKeyboardCapture kb = new LockoutKeyboardCapture(Key.Space);
+            var contianer = ServiceLocator.Current.GetInstance<CompositionContainer>();
+            contianer.ComposeExportedValue(kb);
         }
     }
 }

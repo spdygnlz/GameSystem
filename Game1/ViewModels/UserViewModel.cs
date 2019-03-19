@@ -1,4 +1,5 @@
 ﻿using Game1.Events;
+using InputCapture;
 using Prism.Events;
 using System;
 using System.Collections.Generic;
@@ -17,9 +18,33 @@ namespace Game1.ViewModels
         public string Icon { get; set; }
         public int ButtonId { get; set; }
 
-        public UserViewModel(IEventAggregator eventAggregator)
+        public bool Selected { get; set; }
+
+        private IKeyboardCapture kb;
+
+        public UserViewModel(IEventAggregator eventAggregator, IKeyboardCapture keyboard)
         {
-            eventAggregator.GetEvent<PubSubEvent<PlayerScoreUpdate>>().Subscribe(UpdateScore);            
+            eventAggregator.GetEvent<PubSubEvent<PlayerScoreUpdate>>().Subscribe(UpdateScore);
+            kb = keyboard;
+            Selected = false;
+
+            kb.KeyboardNotification += Kb_KeyboardNotification;
+            kb.KeyboardReset += (s, e) => Selected = false;
+        }
+
+        private void Kb_KeyboardNotification(object sender, KeyboardNotificationEventArgs e)
+        {
+            if (LockoutKeyboardCapture.IntKeyLookup.TryGetValue(e.Key, out int value))
+            {
+                if (value == ButtonId)
+                {
+                    Selected = true;
+                }
+                else
+                {
+                    Selected = false;
+                }
+            }
         }
 
         public UserViewModel()

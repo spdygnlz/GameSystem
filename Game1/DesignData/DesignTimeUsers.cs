@@ -15,10 +15,10 @@ namespace Game1.DesignData
         {
             Users = new ObservableCollection<UserViewModel>();
 
-            Users.Add(new UserViewModel() { FirstName = "Jackson", ButtonId = 1, Score=200 });
-            Users.Add(new UserViewModel() { FirstName = "Katie", ButtonId = 2, Score=-300 });
-            Users.Add(new UserViewModel() { FirstName = "Cassidy", ButtonId = 3, Score=100 });
-            Users.Add(new UserViewModel() { FirstName = "Riley", ButtonId = 4, Score=-100 });
+            Users.Add(new UserViewModel() { FirstName = "Jackson", ButtonId = 1, Score=200, Selected = false });
+            Users.Add(new UserViewModel() { FirstName = "Katie", ButtonId = 2, Score=-300, Selected = false });
+            Users.Add(new UserViewModel() { FirstName = "Cassidy", ButtonId = 3, Score=100, Selected = true });
+            Users.Add(new UserViewModel() { FirstName = "Riley", ButtonId = 4, Score=-100, Selected = false });
         }
     }
 }

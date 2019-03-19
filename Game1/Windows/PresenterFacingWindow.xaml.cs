@@ -29,7 +29,7 @@ namespace Game1.Windows
     {
         private readonly IEventAggregator eventAggregator;
 
-        private IKeyboardCapture kb = new LockoutKeyboardCapture(Key.Space);
+        private IKeyboardCapture kb;
 
 
         [ImportingConstructor]
@@ -37,10 +37,11 @@ namespace Game1.Windows
         {
             InitializeComponent();
 
+            kb = ServiceLocator.Current.GetInstance<IKeyboardCapture>();
             kb.RegisterWindow(this);
 
-            var contianer = ServiceLocator.Current.GetInstance<CompositionContainer>();
-            contianer.ComposeExportedValue(kb);
+            //var contianer = ServiceLocator.Current.GetInstance<CompositionContainer>();
+            //contianer.ComposeExportedValue(kb);
 
             eventAggregator.GetEvent<PubSubEvent<JeopardyViewModel>>().Subscribe((vm) =>
             {                
@@ -49,6 +50,5 @@ namespace Game1.Windows
 
             this.eventAggregator = eventAggregator;
         }
-
     }
 }

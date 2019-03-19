@@ -14,6 +14,8 @@ namespace InputCapture
     public class LockoutKeyboardCapture : IKeyboardCapture
     {
         public event EventHandler<KeyboardNotificationEventArgs> KeyboardNotification;
+        public event EventHandler<EventArgs> KeyboardReset;
+
         //private bool _keySent = false;
         private bool _isLocked = false;
         private TimeSpan timeout = new TimeSpan(0, 0, 0, 0, 1000);
@@ -81,6 +83,8 @@ namespace InputCapture
         {
 //            _keySent = false;
             stopwatch.Restart();
+
+            this.KeyboardReset?.Invoke(this, new EventArgs());
         }
 
         private void SendToTimeout(Key key)

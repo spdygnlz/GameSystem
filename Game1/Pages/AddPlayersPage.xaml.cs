@@ -1,5 +1,6 @@
 ﻿using Game1.ViewModels;
 using Game1.Windows;
+using InputCapture;
 using Microsoft.Practices.ServiceLocation;
 using Microsoft.Win32;
 using Prism.Events;
@@ -32,11 +33,14 @@ namespace Game1.Pages
 
         public ObservableCollection<UserViewModel> Users { get; set; }
 
+        private IKeyboardCapture kb;
+
         public AddPlayersPage()
         {
             InitializeComponent();
             DataContext = this;
             Users = new ObservableCollection<UserViewModel>();
+            kb = ServiceLocator.Current.GetInstance<IKeyboardCapture>();
 
             var container = ServiceLocator.Current.GetInstance<CompositionContainer>();
             container.ComposeExportedValue("Players", Users);
@@ -92,7 +96,7 @@ namespace Game1.Pages
             NewPlayerWindow window = new NewPlayerWindow();
             if (window.ShowDialog() == true)
             {
-                UserViewModel userViewModel = new UserViewModel (eventAggregator)
+                UserViewModel userViewModel = new UserViewModel (eventAggregator, kb)
                 {
                     FirstName = window.PlayerFirstName,
                     LastName = window.PlayerLastName,

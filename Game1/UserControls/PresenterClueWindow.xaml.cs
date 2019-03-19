@@ -79,6 +79,7 @@ namespace Game1
 
             var clueWindow = this as ClueWindowBase;
             eventAggregator.GetEvent<PubSubEvent<ClickClue>>().Publish(new ClickClue { ClueName = clueWindow.Name });
+            kb.Reset();
         }
 
         private void IncorrectButton_Click(object sender, RoutedEventArgs e)

@@ -7,6 +7,7 @@ namespace InputCapture
     public interface IKeyboardCapture
     {
         event EventHandler<KeyboardNotificationEventArgs> KeyboardNotification;
+        event EventHandler<EventArgs> KeyboardReset;
 
         void PreviewKeyDown(object sender, KeyEventArgs e);
         void KeyDown(object sender, KeyEventArgs e);
