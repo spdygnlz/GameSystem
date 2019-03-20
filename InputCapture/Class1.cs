@@ -158,7 +158,7 @@ namespace InputCapture
 
         public void SuspendNotifications(bool value)
         {
-            
+            _suspendNotifications = value;
         }
     }
 }

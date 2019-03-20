@@ -80,11 +80,11 @@
                     </TextBlock.Effect>
                 </TextBlock>
                 
-                <ProgressBar 
+                <!--<ProgressBar 
                     Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2"                  
                     Height="20" Value="{Binding TimerValue}" 
                     Name="TimerProgressBar" 
-                    VerticalAlignment="Center" HorizontalAlignment="Stretch" />
+                    VerticalAlignment="Center" HorizontalAlignment="Stretch" />-->
 
                 <Button Grid.Column="1" Name="CorrectButton" Content="Correct" Background="Green" Margin="10" Visibility="{Binding PlayerClicked, Converter={StaticResource BoolToVis}}" Click="CorrectButtonClicked" />
                 <Button Grid.Column="2" Name="IncorrectButton" Content="Incorrect" Background="Red" Margin="10" Visibility="{Binding PlayerClicked, Converter={StaticResource BoolToVis}}" Click="IncorrectButton_Click" />

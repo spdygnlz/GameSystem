@@ -52,6 +52,7 @@ namespace Game1.UserControls
 
             eventAggregator = ServiceLocator.Current.GetInstance<IEventAggregator>();
             kb = ServiceLocator.Current.GetInstance<IKeyboardCapture>();
+            kb.SuspendNotifications(true);
 
             eventAggregator.GetEvent<PubSubEvent<ClickCard>>().Subscribe((card) => CardClick(card));
             eventAggregator.GetEvent<PubSubEvent<ClickClue>>().Subscribe((clue) => ClueClick(clue));
@@ -70,6 +71,8 @@ namespace Game1.UserControls
             GameCanvas.Children.Remove(clueWindow);
 
             clueWindow.Dispose();
+
+            kb.SuspendNotifications(true);
         }
 
         /// <summary>
@@ -114,6 +117,8 @@ namespace Game1.UserControls
 
             // Add the overlay window to the main window
             GameCanvas.Children.Add(window);
+
+            kb.SuspendNotifications(false);
 
             // Remove the original card so it can't be clicked on again
             MainGrid.Children.Remove(card);

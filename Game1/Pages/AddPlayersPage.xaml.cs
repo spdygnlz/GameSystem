@@ -93,7 +93,7 @@ namespace Game1.Pages
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            NewPlayerWindow window = new NewPlayerWindow();
+            NewPlayerWindow window = new NewPlayerWindow(Users);
             if (window.ShowDialog() == true)
             {
                 UserViewModel userViewModel = new UserViewModel (eventAggregator, kb)

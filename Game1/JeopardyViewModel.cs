@@ -11,18 +11,42 @@ using System.Threading.Tasks;
 
 namespace Game1
 {
-    [Export, PartCreationPolicy(CreationPolicy.Shared) ]
+    [Export, PartCreationPolicy(CreationPolicy.Shared)]
     public class JeopardyViewModel
     {
         public DataTable table = new DataTable();
         private JeopardyModel model;
-        private GameState State;
+        private GameState _state;
+
+        public GameState State
+        {
+            get
+            {
+                return _state;
+            }
+            set
+            {
+                if (_state != value)
+                {
+                    _state = value;                    
+                    eventAggregator.GetEvent<PubSubEvent<JeopardyViewModel>>().Publish(this);
+                }
+            }
+        }
         private readonly IEventAggregator eventAggregator;
+
+        public IEnumerable<GameState> MyEnumTypeValues
+        {
+            get
+            {
+                return Enum.GetValues(typeof(GameState)).Cast<GameState>();
+            }
+        }
 
         public ObservableCollection<UserViewModel> Users { get; set; }
 
         public string FileName
-        {            
+        {
             set
             {
                 model = JeopardyModelHelper.OpenModel(value);
@@ -41,7 +65,7 @@ namespace Game1
         {
             get
             {
-                switch(State)
+                switch (State)
                 {
                     case GameState.Jeopardy:
                         return model.Categories;
@@ -55,12 +79,12 @@ namespace Game1
         }
 
         public void WriteModel(string filename)
-        {            
+        {
             JeopardyModelHelper.WriteModel(filename, model);
         }
     }
 
-    enum GameState
+    public enum GameState
     {
         Jeopardy,
         DoubleJeopardy,

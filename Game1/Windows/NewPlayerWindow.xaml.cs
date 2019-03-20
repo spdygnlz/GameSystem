@@ -1,4 +1,5 @@
-﻿using InputCapture;
+﻿using Game1.ViewModels;
+using InputCapture;
 using Microsoft.Practices.ServiceLocation;
 using System;
 using System.Collections.Generic;
@@ -26,11 +27,22 @@ namespace Game1.Windows
         public string PlayerLastName { get; set; }
         public int ButtonId { get; set; }
         public string ImagePath { get; set; }
+        private IEnumerable<UserViewModel> users;
+        public bool IsValidInput
+        {
+            get
+            {
+                return (ButtonId > 0 && 
+                    !users.Any(x => x.ButtonId == ButtonId) && 
+                    !users.Any(x => x.FirstName == PlayerFirstName));
+            }
+        }
 
-        public NewPlayerWindow()
+        public NewPlayerWindow(IEnumerable<UserViewModel> existingUsers)
         {
             DataContext = this;
             InitializeComponent();
+            users = existingUsers;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

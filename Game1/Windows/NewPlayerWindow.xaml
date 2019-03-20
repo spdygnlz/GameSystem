@@ -12,7 +12,7 @@
 
         <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Right" >
             <Button Name="CancelButton" Content="Cancel" Height="30" Width="75" Margin="10" IsCancel="True" Click="CancelButton_Click" />
-            <Button Name="SaveButton" Content="Save" Height="30" Margin="10" Width="75" IsDefault="True" Click="SaveButton_Click" />
+            <Button Name="SaveButton" Content="Save" Height="30" Margin="10" Width="75" IsDefault="True" Click="SaveButton_Click" IsEnabled="{Binding Path=IsValidInput}" />
         </StackPanel>
 
         <Grid HorizontalAlignment="Left" VerticalAlignment="Center">

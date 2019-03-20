@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.Practices.ServiceLocation;
+using Prism.Events;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

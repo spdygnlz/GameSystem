@@ -58,11 +58,11 @@
                     </TextBlock.Effect>
                 </TextBlock>
 
-                <ProgressBar 
+                <!--<ProgressBar 
                     Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2"                  
                     Height="20" Value="{Binding TimerValue}" 
                     Name="TimerProgressBar" 
-                    VerticalAlignment="Center" HorizontalAlignment="Stretch" />
+                    VerticalAlignment="Center" HorizontalAlignment="Stretch" />-->
             </Grid>
         </Border>
     </Grid>
