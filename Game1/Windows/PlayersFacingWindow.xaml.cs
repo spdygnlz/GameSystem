@@ -1,4 +1,5 @@
 ﻿using Game1.Pages;
+using Game1.UserControls;
 using Prism.Events;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,13 @@ namespace Game1.Windows
         {
             InitializeComponent();
             eventAggregator.GetEvent<PubSubEvent<JeopardyViewModel>>().Subscribe((vm) =>
-            {
+            {   
+                if (Content != null)
+                {
+                    var oldContent = Content as PlayerFacingGameMain;
+                    var mainControl = oldContent?.MainContent?.Content as PlayMainControl;
+                    mainControl?.Dispose();                    
+                }
                 Content = new PlayerFacingGameMain(vm);
             });
             this.eventAggregator = eventAggregator;

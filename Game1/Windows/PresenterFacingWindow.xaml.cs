@@ -1,4 +1,5 @@
 ﻿using Game1.Pages;
+using Game1.UserControls;
 using InputCapture;
 using Microsoft.Practices.ServiceLocation;
 using Prism.Events;
@@ -44,7 +45,13 @@ namespace Game1.Windows
             //contianer.ComposeExportedValue(kb);
 
             eventAggregator.GetEvent<PubSubEvent<JeopardyViewModel>>().Subscribe((vm) =>
-            {                
+            {
+                if (Content != null)
+                {
+                    var oldContent = Content as PresenterFacingGameMain;
+                    var mainControl = oldContent?.MainContent?.Content as PlayMainControl;
+                    mainControl?.Dispose();
+                }
                 Content = new PresenterFacingGameMain(vm);
             });
 

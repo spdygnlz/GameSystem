@@ -16,9 +16,11 @@ namespace Game1.UserControls
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     [Export(typeof(IGame))]
-    public partial class PlayMainControl : UserControl, IGame
+    public partial class PlayMainControl : UserControl, IGame, IDisposable
     {
         private IEventAggregator eventAggregator;
+        SubscriptionToken cardClickToken = null;
+        SubscriptionToken clueClickToken = null;
 
         IKeyboardCapture kb;
 
@@ -54,8 +56,8 @@ namespace Game1.UserControls
             kb = ServiceLocator.Current.GetInstance<IKeyboardCapture>();
             kb.SuspendNotifications(true);
 
-            eventAggregator.GetEvent<PubSubEvent<ClickCard>>().Subscribe((card) => CardClick(card));
-            eventAggregator.GetEvent<PubSubEvent<ClickClue>>().Subscribe((clue) => ClueClick(clue));
+            cardClickToken = eventAggregator.GetEvent<PubSubEvent<ClickCard>>().Subscribe((card) => CardClick(card));
+            clueClickToken = eventAggregator.GetEvent<PubSubEvent<ClickClue>>().Subscribe((clue) => ClueClick(clue));
         }
 
         /// <summary>
@@ -189,5 +191,42 @@ namespace Game1.UserControls
             var cardArgs = new ClickCard() { CardName = card.Name };
             eventAggregator.GetEvent<PubSubEvent<ClickCard>>().Publish(cardArgs);
         }
+
+        #region IDisposable Support
+        private bool disposedValue = false; // To detect redundant calls
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!disposedValue)
+            {
+                if (disposing)
+                {
+                    // TODO: dispose managed state (managed objects).
+                    eventAggregator.GetEvent<PubSubEvent<ClickCard>>().Unsubscribe(cardClickToken);
+                    eventAggregator.GetEvent<PubSubEvent<ClickClue>>().Unsubscribe(clueClickToken);
+                }
+
+                // TODO: free unmanaged resources (unmanaged objects) and override a finalizer below.
+                // TODO: set large fields to null.
+
+                disposedValue = true;
+            }
+        }
+
+        // TODO: override a finalizer only if Dispose(bool disposing) above has code to free unmanaged resources.
+        // ~PlayMainControl() {
+        //   // Do not change this code. Put cleanup code in Dispose(bool disposing) above.
+        //   Dispose(false);
+        // }
+
+        // This code added to correctly implement the disposable pattern.
+        public void Dispose()
+        {
+            // Do not change this code. Put cleanup code in Dispose(bool disposing) above.
+            Dispose(true);
+            // TODO: uncomment the following line if the finalizer is overridden above.
+            // GC.SuppressFinalize(this);
+        }
+        #endregion
     }
 }
