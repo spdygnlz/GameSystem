@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="utf-8"?>
+<JeopardyModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Categories>
+    <JeopardyCategory>
+      <Name>BoM</Name>
+      <Questions>
+        <JeopardyQuestion>
+          <Question>This metal was used to make Nephi's bow.</Question>
+          <Answer>What is Steel.</Answer>
+          <Value>100</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>This prophet witnessed the destruction of his entire people.</Question>
+          <Answer>Who is Moroni?</Answer>
+          <Value>200</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>This father was promised that his sons would be protected while they served missions.</Question>
+          <Answer>Who is Mosiah?</Answer>
+          <Value>300</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>This prophet was Lehi's grandson.</Question>
+          <Answer>Who is Enos?</Answer>
+          <Value>400</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>This man was referred to as "Rabbanah", meaning "Great King".</Question>
+          <Answer>Who is Ammon?</Answer>
+          <Value>500</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+      </Questions>
+    </JeopardyCategory>
+    <JeopardyCategory>
+      <Name>D&amp;C</Name>
+      <Questions>
+        <JeopardyQuestion>
+          <Question>According to the Word of Wisdom, this type of animal benefits from tobacco when sick.</Question>
+          <Answer>What are cattle?</Answer>
+          <Value>100</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>The sacrament prayers can be found in this section of the D&amp;C.</Question>
+          <Answer>What is section 20?</Answer>
+          <Value>200</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>According to D&amp;C 131, there are this many celestial degrees.</Question>
+          <Answer>What is 3?</Answer>
+          <Value>300</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>This section in the D&amp;C is where we find the Word of Wisdom.</Question>
+          <Answer>What is section 89?</Answer>
+          <Value>400</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>This section says that, "this field is white already to harvest".</Question>
+          <Answer>What is section 4?</Answer>
+          <Value>500</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+      </Questions>
+    </JeopardyCategory>
+    <JeopardyCategory>
+      <Name>New Testament</Name>
+      <Questions>
+        <JeopardyQuestion>
+          <Question>These men were warned to avoid King Harod after they visited the Christ child.</Question>
+          <Answer>Who are the wise men?</Answer>
+          <Value>100</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>This friend of Jesus was raised from the dead.</Question>
+          <Answer>Who is Lazarus?</Answer>
+          <Value>200</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>This man was named Saul before he was converted to the gospel.</Question>
+          <Answer>Who is Paul?</Answer>
+          <Value>300</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>This was Jesus' first recorded miracle.</Question>
+          <Answer>What was turning water into wine?</Answer>
+          <Value>400</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>Jesus asked this man to take care of his mother.</Question>
+          <Answer>Who is John?</Answer>
+          <Value>500</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+      </Questions>
+    </JeopardyCategory>
+    <JeopardyCategory>
+      <Name>Old Testament</Name>
+      <Questions>
+        <JeopardyQuestion>
+          <Question>David used this type of weapon to slay Goliath.</Question>
+          <Answer>What is a sling and stone.</Answer>
+          <Value>100</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>This man in the OT is famous for his righteousness during suffering and pain.</Question>
+          <Answer>Who is Job?</Answer>
+          <Value>200</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>This Jewish woman became the Queen of Persia.</Question>
+          <Answer>Who is Esther?</Answer>
+          <Value>300</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>This woman betrayed Samson for money by cutting off his hair.</Question>
+          <Answer>Who is Delilah?</Answer>
+          <Value>400</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>This number of righteous people could have saved Sodom and Gomorrah from being destroyed.</Question>
+          <Answer>What is 10?</Answer>
+          <Value>500</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+      </Questions>
+    </JeopardyCategory>
+    <JeopardyCategory>
+      <Name>Name the Song</Name>
+      <Questions>
+        <JeopardyQuestion>
+          <Question>Daniel was a prophet. He refused to sin.</Question>
+          <Answer>Follow the Prophet</Answer>
+          <Value>100</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>Q2C4</Question>
+          <Answer>A2C4</Answer>
+          <Value>200</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>Q3C4</Question>
+          <Answer>A3C4</Answer>
+          <Value>300</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>Q4C4</Question>
+          <Answer>A4C4</Answer>
+          <Value>400</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>Q5C4</Question>
+          <Answer>A5C4</Answer>
+          <Value>500</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+      </Questions>
+    </JeopardyCategory>
+    <JeopardyCategory>
+      <Name>Parables</Name>
+      <Questions>
+        <JeopardyQuestion>
+          <Question>The wise man built his house upon one of these.</Question>
+          <Answer>What is a rock?</Answer>
+          <Value>100</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>Q2C5</Question>
+          <Answer>A2C5</Answer>
+          <Value>200</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>Q3C5</Question>
+          <Answer>A3C5</Answer>
+          <Value>300</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>Q4C5</Question>
+          <Answer>A4C5</Answer>
+          <Value>400</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>In the parable of the Good Samaritan, the first man to pass the wounded stranger was of this profession.</Question>
+          <Answer>Priest</Answer>
+          <Value>500</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+      </Questions>
+    </JeopardyCategory>
+  </Categories>
+  <DoubleJeopardyCategories>
+    <JeopardyCategory>
+      <Name>Potent Potables 0</Name>
+      <Questions>
+        <JeopardyQuestion>
+          <Question>Q1C0</Question>
+          <Answer>A1C0</Answer>
+          <Value>200</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>Q2C0</Question>
+          <Answer>A2C0</Answer>
+          <Value>400</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>Q3C0</Question>
+          <Answer>A3C0</Answer>
+          <Value>600</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>Q4C0</Question>
+          <Answer>A4C0</Answer>
+          <Value>800</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>Q5C0</Question>
+          <Answer>A5C0</Answer>
+          <Value>1000</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+      </Questions>
+    </JeopardyCategory>
+    <JeopardyCategory>
+      <Name>Potent Potables 1</Name>
+      <Questions>
+        <JeopardyQuestion>
+          <Question>Q1C1</Question>
+          <Answer>A1C1</Answer>
+          <Value>200</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>Q2C1</Question>
+          <Answer>A2C1</Answer>
+          <Value>400</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>Q3C1</Question>
+          <Answer>A3C1</Answer>
+          <Value>600</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>Q4C1</Question>
+          <Answer>A4C1</Answer>
+          <Value>800</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>Q5C1</Question>
+          <Answer>A5C1</Answer>
+          <Value>1000</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+      </Questions>
+    </JeopardyCategory>
+    <JeopardyCategory>
+      <Name>Potent Potables 2</Name>
+      <Questions>
+        <JeopardyQuestion>
+          <Question>Q1C2</Question>
+          <Answer>A1C2</Answer>
+          <Value>200</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>Q2C2</Question>
+          <Answer>A2C2</Answer>
+          <Value>400</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>Q3C2</Question>
+          <Answer>A3C2</Answer>
+          <Value>600</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>Q4C2</Question>
+          <Answer>A4C2</Answer>
+          <Value>800</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>Q5C2</Question>
+          <Answer>A5C2</Answer>
+          <Value>1000</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+      </Questions>
+    </JeopardyCategory>
+    <JeopardyCategory>
+      <Name>Potent Potables 3</Name>
+      <Questions>
+        <JeopardyQuestion>
+          <Question>Q1C3</Question>
+          <Answer>A1C3</Answer>
+          <Value>200</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>Q2C3</Question>
+          <Answer>A2C3</Answer>
+          <Value>400</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>Q3C3</Question>
+          <Answer>A3C3</Answer>
+          <Value>600</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>Q4C3</Question>
+          <Answer>A4C3</Answer>
+          <Value>800</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>Q5C3</Question>
+          <Answer>A5C3</Answer>
+          <Value>1000</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+      </Questions>
+    </JeopardyCategory>
+    <JeopardyCategory>
+      <Name>Potent Potables 4</Name>
+      <Questions>
+        <JeopardyQuestion>
+          <Question>Q1C4</Question>
+          <Answer>A1C4</Answer>
+          <Value>200</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>Q2C4</Question>
+          <Answer>A2C4</Answer>
+          <Value>400</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>Q3C4</Question>
+          <Answer>A3C4</Answer>
+          <Value>600</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>Q4C4</Question>
+          <Answer>A4C4</Answer>
+          <Value>800</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>Q5C4</Question>
+          <Answer>A5C4</Answer>
+          <Value>1000</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+      </Questions>
+    </JeopardyCategory>
+    <JeopardyCategory>
+      <Name>Potent Potables 5</Name>
+      <Questions>
+        <JeopardyQuestion>
+          <Question>Q1C5</Question>
+          <Answer>A1C5</Answer>
+          <Value>200</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>Q2C5</Question>
+          <Answer>A2C5</Answer>
+          <Value>400</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>Q3C5</Question>
+          <Answer>A3C5</Answer>
+          <Value>600</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>Q4C5</Question>
+          <Answer>A4C5</Answer>
+          <Value>800</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>Q5C5</Question>
+          <Answer>A5C5</Answer>
+          <Value>1000</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+      </Questions>
+    </JeopardyCategory>
+  </DoubleJeopardyCategories>
+  <FinalJeopardy>
+    <Questions>
+      <JeopardyQuestion>
+        <Question>Question</Question>
+        <Answer>Answer</Answer>
+        <Value>0</Value>
+        <Used>false</Used>
+      </JeopardyQuestion>
+    </Questions>
+  </FinalJeopardy>
+</JeopardyModel>

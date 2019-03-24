@@ -35,11 +35,11 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="2*" />
                     <RowDefinition Height="7*"/>
-                    <RowDefinition Height="7*"/>
                     <RowDefinition Height="2*" />
                 </Grid.RowDefinitions>
-                
-                <TextBlock Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4"
+
+                <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4">
+                <TextBlock 
                             Padding="40"
                             Text="{Binding ElementName=presenterClueWindow, Path=ClueText}"
                             TextAlignment="Center"
@@ -59,13 +59,13 @@
                             BlurRadius="0"/>
                     </TextBlock.Effect>
                 </TextBlock>
-                <TextBlock Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4"
+                <TextBlock 
                            Padding="40"
                             Text="{Binding ElementName=presenterClueWindow, Path=ClueAnswer}"
                             TextAlignment="Center"
                             VerticalAlignment="top"
                             TextWrapping="Wrap"
-                            FontSize="36"
+                            FontSize="32"
                             FontFamily="Enchanted"
                             FontWeight="Bold"
                             Foreground="White" 
@@ -79,7 +79,7 @@
                             BlurRadius="0"/>
                     </TextBlock.Effect>
                 </TextBlock>
-                
+                </StackPanel>
                 <!--<ProgressBar 
                     Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2"                  
                     Height="20" Value="{Binding TimerValue}" 

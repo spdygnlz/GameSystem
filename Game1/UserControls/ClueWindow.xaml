@@ -44,7 +44,7 @@
                             TextAlignment="Center"
                             VerticalAlignment="Center"
                             TextWrapping="Wrap"
-                            FontSize="96"
+                            FontSize="72"
                             FontFamily="Enchanted"
                             FontWeight="Bold"
                             Foreground="White" MaxWidth="1000">
