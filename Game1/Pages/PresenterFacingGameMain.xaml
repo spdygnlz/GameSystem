@@ -32,9 +32,8 @@
                 <CheckBox Content="Use Auto Voice" Name="UseVoiceCheckbox" HorizontalAlignment="Left" Margin="15, 0, 15, 0" VerticalAlignment="Center" />
                 <Label Content="Timer Length: " Name="TimerPeriod" VerticalAlignment="Center" />
                 <TextBox Width="100" Height="30"/>
-                <ComboBox SelectedItem="{Binding State}" ItemsSource="{Binding MyEnumTypeValues}" Width="150" Margin="15, 0, 15, 0" />
-
-
+                <ComboBox SelectedItem="{Binding State}" ItemsSource="{Binding MyEnumTypeValues}" Width="150" Height="30" Margin="15, 0, 15, 0" />
+                <TextBox Name="LastPressed" Width="100" Height="30" Margin="0,0,15,0" Text="{Binding LastPressed}" />
             </StackPanel>
         </Grid>
     </Grid>

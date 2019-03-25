@@ -22,7 +22,7 @@ namespace Game1.UserControls
         SubscriptionToken cardClickToken = null;
         SubscriptionToken clueClickToken = null;
 
-        IKeyboardCapture kb;
+        LockoutKeyboardCapture kb;
 
         public string GameName
         {
@@ -31,8 +31,6 @@ namespace Game1.UserControls
                 return "Jeopardy!";
             }
         }
-
-
 
         public bool IsPresenter
         {
@@ -53,7 +51,7 @@ namespace Game1.UserControls
             InitializeComponent();
 
             eventAggregator = ServiceLocator.Current.GetInstance<IEventAggregator>();
-            kb = ServiceLocator.Current.GetInstance<IKeyboardCapture>();
+            kb = ServiceLocator.Current.GetInstance<IKeyboardCapture>() as LockoutKeyboardCapture;
             kb.SuspendNotifications(true);
 
             cardClickToken = eventAggregator.GetEvent<PubSubEvent<ClickCard>>().Subscribe((card) => CardClick(card));
@@ -94,6 +92,8 @@ namespace Game1.UserControls
             else
                 window = new ClueWindow() { Name = $"Clue{cardArgs.CardName}" };
 
+            //window.DataContext = kb;
+
             // Hook up the event that will close the window when it's double clicked
             window.MouseDoubleClick += (s, args) =>             
             {
@@ -120,6 +120,7 @@ namespace Game1.UserControls
             // Add the overlay window to the main window
             GameCanvas.Children.Add(window);
 
+            kb.IsLocked = true;
             kb.SuspendNotifications(false);
 
             // Remove the original card so it can't be clicked on again

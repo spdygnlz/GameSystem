@@ -58,11 +58,9 @@
                     </TextBlock.Effect>
                 </TextBlock>
 
-                <!--<ProgressBar 
-                    Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2"                  
-                    Height="20" Value="{Binding TimerValue}" 
-                    Name="TimerProgressBar" 
-                    VerticalAlignment="Center" HorizontalAlignment="Stretch" />-->
+                <Rectangle Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" 
+                           HorizontalAlignment="Stretch" Height="15" Fill="Red" 
+                           Visibility="{Binding Path=IsLocked, Converter={StaticResource BoolToVis}}"/>
             </Grid>
         </Border>
     </Grid>

@@ -22,7 +22,7 @@ namespace Game1.ViewModels
             get => _isInEditMode;
             set
             {
-                kb.SuspendNotifications(value);
+                //kb.SuspendNotifications(value);
                 _isInEditMode = value;
             }
         }
@@ -37,7 +37,7 @@ namespace Game1.ViewModels
             eventAggregator.GetEvent<PubSubEvent<PlayerScoreUpdate>>().Subscribe(UpdateScore);
             kb = keyboard;
             Selected = false;
-            IsInEditMode = false;
+            //IsInEditMode = false;
 
             kb.KeyboardNotification += Kb_KeyboardNotification;
             kb.KeyboardReset += (s, e) => Selected = false;

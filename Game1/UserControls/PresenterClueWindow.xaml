@@ -33,9 +33,9 @@
                     <ColumnDefinition Width="1*" />
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="2*" />
-                    <RowDefinition Height="7*"/>
-                    <RowDefinition Height="2*" />
+                    <RowDefinition Height="1.5*" />
+                    <RowDefinition Height="8*"/>
+                    <RowDefinition Height="1*" />
                 </Grid.RowDefinitions>
 
                 <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4">
@@ -80,11 +80,11 @@
                     </TextBlock.Effect>
                 </TextBlock>
                 </StackPanel>
-                <!--<ProgressBar 
-                    Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2"                  
-                    Height="20" Value="{Binding TimerValue}" 
-                    Name="TimerProgressBar" 
-                    VerticalAlignment="Center" HorizontalAlignment="Stretch" />-->
+                
+                <Rectangle Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" 
+                           HorizontalAlignment="Stretch" Height="15" Fill="Red" 
+                           Visibility="{Binding Path=IsLocked, Converter={StaticResource BoolToVis}}"/>
+
 
                 <Button Grid.Column="1" Name="CorrectButton" Content="Correct" Background="Green" Margin="10" Visibility="{Binding PlayerClicked, Converter={StaticResource BoolToVis}}" Click="CorrectButtonClicked" />
                 <Button Grid.Column="2" Name="IncorrectButton" Content="Incorrect" Background="Red" Margin="10" Visibility="{Binding PlayerClicked, Converter={StaticResource BoolToVis}}" Click="IncorrectButton_Click" />

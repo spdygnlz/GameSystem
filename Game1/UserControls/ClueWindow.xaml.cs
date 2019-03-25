@@ -26,18 +26,39 @@ namespace Game1
     /// </summary>
     public partial class ClueWindow : ClueWindowBase, IDisposable, INotifyPropertyChanged
     {
+        private LockoutKeyboardCapture _kb;
+
         public ClueWindow()
         {
             InitializeComponent();
-         
+            _kb = ServiceLocator.Current.GetInstance<IKeyboardCapture>() as LockoutKeyboardCapture;
+            _kb.PropertyChanged += _kb_PropertyChanged;
             DataContext = this;
 
             // TODO: start timer?
         }
 
+        public bool IsLocked
+        {
+            get
+            {
+                return _kb?.IsLocked ?? false;
+            }
+
+            private set
+            {
+                _kb.IsLocked = value;
+            }
+        }
+
+        private void _kb_PropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(IsLocked)));
+        }
+
         public override void Dispose()
         {
-
+            _kb.PropertyChanged -= _kb_PropertyChanged;
             // Wheres the timer?
         }
 

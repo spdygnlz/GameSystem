@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
@@ -11,17 +12,24 @@ using System.Windows.Media;
 
 namespace InputCapture
 {
-    public class LockoutKeyboardCapture : IKeyboardCapture
+    public class LockoutKeyboardCapture : IKeyboardCapture, INotifyPropertyChanged
     {
         public event EventHandler<KeyboardNotificationEventArgs> KeyboardNotification;
         public event EventHandler<EventArgs> KeyboardReset;
+        public event PropertyChangedEventHandler PropertyChanged;
 
         //private bool _keySent = false;
-        private bool _isLocked = false;
+        private bool _isLocked = true;
         private TimeSpan timeout = new TimeSpan(0, 0, 0, 0, 1000);
         private Stopwatch stopwatch = new Stopwatch();
         private UIElement owner = null;
         private bool _suspendNotifications = false;
+
+        public bool IsLocked
+        {
+            get { return _isLocked; }
+            set { _isLocked = value; }
+        }
 
         public static Dictionary<Key, int> IntKeyLookup = new Dictionary<Key, int>()
         {
@@ -46,7 +54,7 @@ namespace InputCapture
 
             if (!IsParentOf(sender as UIElement, owner)) return;
 
-            if (_isLocked && e.Key != _resetKey)
+            if (IsLocked && e.Key != _resetKey)
             {
                 e.Handled = true;
             }
@@ -60,7 +68,7 @@ namespace InputCapture
 
             if (e.Key == _resetKey)
             {
-                _isLocked = true;
+                IsLocked = true;
             }
             else
             {
@@ -77,7 +85,7 @@ namespace InputCapture
             if (e.Key == _resetKey)
             {
                 Reset();
-                _isLocked = false;
+                IsLocked = false;
             }
         }
 
@@ -102,7 +110,7 @@ namespace InputCapture
 
         private void OnKeyboardNotification(Key key, TimeSpan timespan)
         {
-            _isLocked = true;
+            IsLocked = true;
             KeyboardNotification?.Invoke(this, new KeyboardNotificationEventArgs() { Key = key, Time = timespan, Owner = owner});
         }
 
@@ -114,8 +122,6 @@ namespace InputCapture
             window.PreviewKeyUp += PreviewKeyUp;
             window.KeyUp += KeyUp;
         }
-
-
 
         public bool IsParentOf(UIElement child, UIElement parent)
         {

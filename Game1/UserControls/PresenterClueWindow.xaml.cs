@@ -26,7 +26,7 @@ namespace Game1
     /// </summary>
     public partial class PresenterClueWindow : ClueWindowBase, INotifyPropertyChanged
     {
-        IKeyboardCapture kb = null;
+        LockoutKeyboardCapture kb = null;
         IEventAggregator eventAggregator = null;
         private int LastPlayerClicked = -1;
 
@@ -43,11 +43,31 @@ namespace Game1
             //var voices = syn.GetInstalledVoices();
             //syn.SpeakAsync(ClueText);
 
-            kb = ServiceLocator.Current.GetInstance<IKeyboardCapture>();
+            kb = ServiceLocator.Current.GetInstance<IKeyboardCapture>() as LockoutKeyboardCapture;
             kb.Reset();
             kb.KeyboardNotification += KeyboardNotification;
+            kb.PropertyChanged += Kb_PropertyChanged;
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(IsLocked)));
 
             eventAggregator = ServiceLocator.Current.GetInstance<IEventAggregator>();
+        }
+
+        private void Kb_PropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(IsLocked)));
+        }
+
+        public bool IsLocked
+        {
+            get
+            {
+                return kb?.IsLocked ?? false;
+            }
+
+            private set
+            {
+                kb.IsLocked = value;
+            }
         }
 
         private void KeyboardNotification(object sender, KeyboardNotificationEventArgs e)
@@ -63,6 +83,7 @@ namespace Game1
             if (kb != null)
             {
                 kb.KeyboardNotification -= KeyboardNotification;
+                kb.PropertyChanged -= Kb_PropertyChanged;
             }
 
 
@@ -89,6 +110,7 @@ namespace Game1
             PlayerClicked = false;
             LastPlayerClicked = -1;
             kb.Reset();
+            kb.IsLocked = false;
         }
     }
 }

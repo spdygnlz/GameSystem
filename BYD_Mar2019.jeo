@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="utf-8"?>
+<JeopardyModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Categories>
+    <JeopardyCategory>
+      <Name>Alma</Name>
+      <Questions>
+        <JeopardyQuestion>
+          <Question>I was a priest of this wicked King.</Question>
+          <Answer>Who was Noah?</Answer>
+          <Value>100</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>I was High Priest alongside this righteous king.</Question>
+          <Answer>Who was Mosiah?</Answer>
+          <Value>200</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>I baptized believers in in this wilderness oasis.</Question>
+          <Answer>What are the Waters of Mormon?</Answer>
+          <Value>300</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>I and my people established ourselves in this new land.</Question>
+          <Answer>What is the land of Helam?</Answer>
+          <Value>400</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>I and my people where forbidden to pray by this former colleague.</Question>
+          <Answer>Who was Amulon?</Answer>
+          <Value>500</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+      </Questions>
+    </JeopardyCategory>
+    <JeopardyCategory>
+      <Name>Samuel the Lamanite</Name>
+      <Questions>
+        <JeopardyQuestion>
+          <Question>I taught from the walls of this Nephite city.</Question>
+          <Answer>What is Zarahemla?</Answer>
+          <Value>100</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>I testified of wondrous events to take place in these many years.</Question>
+          <Answer>What is 5?</Answer>
+          <Value>200</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>I testified of Nephite destruction prior to the passing of a certain number of years.</Question>
+          <Answer>What is 400?</Answer>
+          <Value>300</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>I prophesied mercy upon these people at some future date.</Question>
+          <Answer>Who are the Lamanites?</Answer>
+          <Value>400</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>Those who believed my prophecies where baptized by this prophet.</Question>
+          <Answer>Who was Nephi?</Answer>
+          <Value>500</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+      </Questions>
+    </JeopardyCategory>
+    <JeopardyCategory>
+      <Name>Moroni</Name>
+      <Questions>
+        <JeopardyQuestion>
+          <Question>I fought in the final battle for the survival of my people here.</Question>
+          <Answer>What is the land of Cumorah?</Answer>
+          <Value>100</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>I completed the writings of my father whose name was this.</Question>
+          <Answer>Who was Mormon?</Answer>
+          <Value>200</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>I promised a testimony of the Book of Mormon to those who would ask in this way.</Question>
+          <Answer>What is with a sincere heart/real intent/faith in Christ?</Answer>
+          <Value>300</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>I escaped the destruction of my people with a certain number of associates.</Question>
+          <Answer>What is 24?</Answer>
+          <Value>400</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>I translated the writings of this ancient prophet.</Question>
+          <Answer>Who was Ether?</Answer>
+          <Value>500</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+      </Questions>
+    </JeopardyCategory>
+    <JeopardyCategory>
+      <Name>BoM Prophets</Name>
+      <Questions>
+        <JeopardyQuestion>
+          <Question>I wrestled before God.</Question>
+          <Answer>Who was Enos?</Answer>
+          <Value>100</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>I called my people to the temple to hear my final teachings.</Question>
+          <Answer>Who was Benjamin?</Answer>
+          <Value>200</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>I led a most miraculous band of soldiers.</Question>
+          <Answer>Who was Helaman?</Answer>
+          <Value>300</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>I prepared young Mormon for the task of completing the Nephite record.</Question>
+          <Answer>Who was Ammaron?</Answer>
+          <Value>400</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>I was the last of Lehi’s line to write on Nephi’s small plates.</Question>
+          <Answer>Who was Amaleki?</Answer>
+          <Value>500</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+      </Questions>
+    </JeopardyCategory>
+    <JeopardyCategory>
+      <Name>BoM Places</Name>
+      <Questions>
+        <JeopardyQuestion>
+          <Question>Christ visited the Nephites at the temple in this city.</Question>
+          <Answer>What is Bountiful?</Answer>
+          <Value>100</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>Alma met two future missionary companions in this city prior to its desolation.</Question>
+          <Answer>What is Ammonihah?</Answer>
+          <Value>200</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>Ammon taught King Lamoni in this Lamanite region.</Question>
+          <Answer>What is the land of Ishmael?</Answer>
+          <Value>300</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>The Nephites gave exiled Lamanite converts this area to live in safety.</Question>
+          <Answer>What is the land of Jershon?</Answer>
+          <Value>400</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>This prominent river in Nephite territory was the site of both battles and baptisms.</Question>
+          <Answer>What is Sidon?</Answer>
+          <Value>500</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+      </Questions>
+    </JeopardyCategory>
+    <JeopardyCategory>
+      <Name>BoM Scripture Mastery</Name>
+      <Questions>
+        <JeopardyQuestion>
+          <Question>... I will go and do the things which the Lord hath commanded ...</Question>
+          <Answer>What is 1 Nephi 3:7?</Answer>
+          <Value>100</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>For the natural man is an enemy to God ...</Question>
+          <Answer>What is Mosiah 3:19?</Answer>
+          <Value>200</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>... wickedness never was happiness</Question>
+          <Answer>What is Alma 41:10?</Answer>
+          <Value>300</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>... remember, remember that it is upon the rock of our Redeemer, who is Christ, the Son of God, that ye must build your foundation;</Question>
+          <Answer>What is Helaman 5:12?</Answer>
+          <Value>400</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>... by the power of the Holy Ghost ye may know the truth of all things.</Question>
+          <Answer>What is Moroni 10: 4-5?</Answer>
+          <Value>500</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+      </Questions>
+    </JeopardyCategory>
+  </Categories>
+  <DoubleJeopardyCategories>
+    <JeopardyCategory>
+      <Name>Righteous Women</Name>
+      <Questions>
+        <JeopardyQuestion>
+          <Question>I am called the Mother of the World</Question>
+          <Answer>Who is Eve?</Answer>
+          <Value>200</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>I was Abraham's first wife.</Question>
+          <Answer>Who is Sarah?</Answer>
+          <Value>400</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>I was the mother of John the Baptist.</Question>
+          <Answer>Who is Elizabeth?</Answer>
+          <Value>600</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>I was an Israelite that became the Queen of Persia.</Question>
+          <Answer>Who is Esther?</Answer>
+          <Value>800</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>I was a famous pioneer that wrote many hymns.</Question>
+          <Answer>Eliza R. Snow?</Answer>
+          <Value>1000</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+      </Questions>
+    </JeopardyCategory>
+    <JeopardyCategory>
+      <Name>BoM General</Name>
+      <Questions>
+        <JeopardyQuestion>
+          <Question>The number of years the Book of Mormon spans (not including the Jaredites).</Question>
+          <Answer>What is 1,000 years?</Answer>
+          <Value>200</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>I was Mulek's father.
+            Helaman 6:10</Question>
+          <Answer>Who is Zedekiah?</Answer>
+          <Value>400</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>This is the city from which Mulek and his followers came.
+            Omni 1:15</Question>
+          <Answer>What is Jerusalem?</Answer>
+          <Value>600</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>This group eventually caused the destruction of the Nephite Nation.
+            3 Nephi 3:15</Question>
+          <Answer>Who are the Gadianton Robbers?</Answer>
+          <Value>800</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>This person is mentioned approximately every 1.7 verses in the Book of Mormon.</Question>
+          <Answer>Who is Jesus Christ?</Answer>
+          <Value>1000</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+      </Questions>
+    </JeopardyCategory>
+    <JeopardyCategory>
+      <Name>The OT</Name>
+      <Questions>
+        <JeopardyQuestion>
+          <Question>These were the names of Noah’s sons.
+          (Gen. 6:10)</Question>
+          <Answer>Who was Shem, Ham, &amp; Japheth?</Answer>
+          <Value>200</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>This man purchased Joseph in Egypt.
+          (Gen 39:1)</Question>
+          <Answer>Who is Potipher?</Answer>
+          <Value>400</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>How old was Abraham when Isaac was born?
+          (Gen 21:5)</Question>
+          <Answer>What is 100 years old?</Answer>
+          <Value>600</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>This amount of God’s spirit children chose to follow Satan’s plan.</Question>
+          <Answer>What is 1/3?</Answer>
+          <Value>800</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>What mountain did the ark land on when the flood waters receded?
+            (Gen 8:4)</Question>
+          <Answer>What is Ararat?</Answer>
+          <Value>1000</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+      </Questions>
+    </JeopardyCategory>
+    <JeopardyCategory>
+      <Name>The NT</Name>
+      <Questions>
+        <JeopardyQuestion>
+          <Question>These men were warned to avoid King Harod after they visited the Christ child.</Question>
+          <Answer>Who are the wise men?</Answer>
+          <Value>200</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>This friend of Jesus was raised from the dead.</Question>
+          <Answer>Who is Lazarus?</Answer>
+          <Value>400</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>This man was named Saul before he was converted to the gospel.</Question>
+          <Answer>Who is Paul?</Answer>
+          <Value>600</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>This was Jesus' first recorded miracle.</Question>
+          <Answer>What was turning water into wine?</Answer>
+          <Value>800</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>Jesus asked this man to take care of his mother.</Question>
+          <Answer>Who is John?</Answer>
+          <Value>1000</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+      </Questions>
+      </JeopardyCategory>
+    <JeopardyCategory>
+      <Name>BoM Missionaries</Name>
+      <Questions>
+        <JeopardyQuestion>
+          <Question>This Lamanite missionary preached to the Nephites in Zarahemla.
+            Helaman 14</Question>
+          <Answer>Who is Samuel the Lamanite?</Answer>
+          <Value>200</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>This missionary prophet warned Coriantumr that he and his people must repent or be destroyed.
+            Ether 13:20-21</Question>
+          <Answer>Who is Ether?</Answer>
+          <Value>400</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>These brothers served a 14-year mission and returned with their converts.
+            Alma 17-26</Question>
+          <Answer>Who are the sons of Mosiah/Ammon, Aaron, Omner, and Himni?</Answer>
+          <Value>600</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>This prophet's life teaches us that if we sin, we can repent and go on to do great things.
+            Mosiah 27</Question>
+          <Answer>Who is Alma the Elder OR Alma the Younger?</Answer>
+          <Value>800</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>This missionary taught King Limhi and helped the king's people escape Lamanite bondage.
+            Mosiah 8</Question>
+          <Answer>Who is Ammon?</Answer>
+          <Value>1000</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+      </Questions>
+    </JeopardyCategory>
+    <JeopardyCategory>
+      <Name>Primary</Name>
+      <Questions>
+        <JeopardyQuestion>
+          <Question>This what CTR means.</Question>
+          <Answer>What is "Choose the Right"?</Answer>
+          <Value>200</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>This is the youngest class in Primary.</Question>
+          <Answer>What is the Nursery?</Answer>
+          <Value>400</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>This is the song that teaches us how to be clean (like "after rain").</Question>
+          <Answer>What is "When I am Baptized"?</Answer>
+          <Value>600</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>This is the song where we learn what keeps us "safe from sin".</Question>
+          <Answer>What is "Scripture Power"?</Answer>
+          <Value>800</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+        <JeopardyQuestion>
+          <Question>This was the year that Primary was started.</Question>
+          <Answer>What is 1878?</Answer>
+          <Value>1000</Value>
+          <Used>false</Used>
+        </JeopardyQuestion>
+      </Questions>
+    </JeopardyCategory>
+  </DoubleJeopardyCategories>
+  <FinalJeopardy>
+    <Questions>
+      <JeopardyQuestion>
+        <Question>Question</Question>
+        <Answer>Answer</Answer>
+        <Value>0</Value>
+        <Used>false</Used>
+      </JeopardyQuestion>
+    </Questions>
+  </FinalJeopardy>
+</JeopardyModel>
