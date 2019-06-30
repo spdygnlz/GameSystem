@@ -258,22 +258,19 @@
           <Used>false</Used>
         </JeopardyQuestion>
         <JeopardyQuestion>
-          <Question>I was Mulek's father.
-            Helaman 6:10</Question>
+          <Question>I was Mulek's father. Helaman 6:10</Question>
           <Answer>Who is Zedekiah?</Answer>
           <Value>400</Value>
           <Used>false</Used>
         </JeopardyQuestion>
         <JeopardyQuestion>
-          <Question>This is the city from which Mulek and his followers came.
-            Omni 1:15</Question>
+          <Question>This is the city from which Mulek and his followers came. (Omni 1:15)</Question>
           <Answer>What is Jerusalem?</Answer>
           <Value>600</Value>
           <Used>false</Used>
         </JeopardyQuestion>
         <JeopardyQuestion>
-          <Question>This group eventually caused the destruction of the Nephite Nation.
-            3 Nephi 3:15</Question>
+          <Question>This group eventually caused the destruction of the Nephite Nation. (3 Nephi 3:15)</Question>
           <Answer>Who are the Gadianton Robbers?</Answer>
           <Value>800</Value>
           <Used>false</Used>
@@ -290,22 +287,19 @@
       <Name>The OT</Name>
       <Questions>
         <JeopardyQuestion>
-          <Question>These were the names of Noah’s sons.
-          (Gen. 6:10)</Question>
+          <Question>These were the names of Noah’s sons. (Gen. 6:10)</Question>
           <Answer>Who was Shem, Ham, &amp; Japheth?</Answer>
           <Value>200</Value>
           <Used>false</Used>
         </JeopardyQuestion>
         <JeopardyQuestion>
-          <Question>This man purchased Joseph in Egypt.
-          (Gen 39:1)</Question>
+          <Question>This man purchased Joseph in Egypt. (Gen 39:1)</Question>
           <Answer>Who is Potipher?</Answer>
           <Value>400</Value>
           <Used>false</Used>
         </JeopardyQuestion>
         <JeopardyQuestion>
-          <Question>How old was Abraham when Isaac was born?
-          (Gen 21:5)</Question>
+          <Question>How old was Abraham when Isaac was born? (Gen 21:5)</Question>
           <Answer>What is 100 years old?</Answer>
           <Value>600</Value>
           <Used>false</Used>
@@ -317,8 +311,7 @@
           <Used>false</Used>
         </JeopardyQuestion>
         <JeopardyQuestion>
-          <Question>What mountain did the ark land on when the flood waters receded?
-            (Gen 8:4)</Question>
+          <Question>What mountain did the ark land on when the flood waters receded? (Gen 8:4)</Question>
           <Answer>What is Ararat?</Answer>
           <Value>1000</Value>
           <Used>false</Used>
